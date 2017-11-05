@@ -605,8 +605,13 @@
             <div class="col s12">
               <div class="card-panel white">
                 <h1>Contact.</h1>
-                <p class="flow-text">For business inquiries or work requests, please use the form below.</p>
-                <form method="post" name="index" id="indexform">
+                <p class="flow-text">For business inquiries or work requests, please write to:</p>
+                <p class="center-align">
+                  <script type="text/javascript">
+                    document.write('<a href="mailto:'+first + '@' + last+'">'+first + '@' + last+'<\/a>');
+                  </script>
+                </p>
+                <!-- <form method="post" name="index" id="indexform">
                   <div class="row">
                     <div class="input-field col s12">
                       <input id="name" type="text" name="name" class="validate" required>
@@ -629,7 +634,7 @@
                   <button class="btn waves-effect btn-large deep-orange accent-3" type="submit" name="action" value="Send">Submit</button>
                   <button type="submit" id="popup" class="popup-modal" href="#modal-results">Popup</button>
                   <div id="modal-results" class="white-popup mfp-hide"></div>
-                </form>
+                </form> -->
               </div>
             </div>
           </div>
@@ -652,6 +657,11 @@
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/mixitup.min.js"></script>
   <script src='js/wow.min.js'></script>
+
+  <script type="text/javascript">
+    var first = "info";
+    var last = "gcjoel.net";
+  </script>
 
   <script type="text/javascript">
     $("#indexform").submit(function(event) {
