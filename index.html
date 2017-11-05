@@ -1,1 +1,863 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giancarlo Abadia</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/spinkit.css">
+  <link rel="stylesheet" href="css/animate.min.css" />
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:900">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    * {transition: all 0.5s ease;}
+    body {background-color: #FFB300; font-family: 'Montserrat', sans-serif; font-weight: 900;}
+    body.section-open main {overflow: visible;}
+    body.section-open main::before {opacity: 0.4; background:#000;}
+    h1, h2, h3, h4, h5, h6 {font-weight: inherit;}
+    main.container {width: 100%; height: 100%; max-width: initial; position: absolute; display: flex; justify-content: center; align-items: center; z-index: 3; overflow: hidden;}
+    main::before {opacity: 1;content: "";pointer-events:none;width: 100%;height: 100%;position: absolute;top: 0;left: 0;transition: all 0.3s;}
+    main.container .left {opacity: 1; width: 100%; /*top: 50%; transform: translateY(-50%);*/}
+    main.container .left .menu li {animation: fadeInLeft 0.5s ease 1 normal;}
+    main.container .left .logo {animation: fadeInDown 0.5s ease 1 normal;}
+    .logo {text-indent: -9999px; height: 100px; background-image: url(img/logo.svg); background-repeat: no-repeat; background-position: center; background-size: 75px; background-color: #FFB300; z-index: 1; border-radius: 100px;}
+    .right, body.section-open .right {display: none;}
+    .right .work, .right .about, .right .contact {width: 30%;height: 100%;position: absolute;top: 0;right: 0; opacity: 0; background-repeat: no-repeat; background-position: right center; background-size: contain;transform: translate(100%, 0);}
+    .right .work {background-image: url('img/book.svg');}
+    .right .about {background-image: url('img/user.svg');}
+    .right .contact {background-image: url('img/envelope.svg');}
+    .right .work.active, .right .about.active, .right .contact.active {opacity: 1; transform: translate(-30%, 0);}
+
+    .topmenu {text-align: center;}
+    body.section-open .topmenu {animation: fadeInDownBig 1s;}
+    .topmenu li {display: inline;}
+    .topmenu a {margin: 5px; color: #000; font-size: 14px; opacity: 0.2; text-transform: lowercase; border-bottom: 3px solid transparent;}
+    .topmenu a:hover {opacity: 1;}
+    .topmenu a.active {opacity: 1; border-bottom: 3px solid #000;}
+
+    .menu {text-align: center; background-color: transparent; height: auto; box-shadow: none; color: #000;}
+    .menu li {float: none;}
+    .menu a {display: block; color:#000; text-decoration: none; text-transform: lowercase; font-size: 10vw; line-height: inherit; padding: 1vh 0; transition: none;}
+    .menu a:hover {background-color: transparent; color: #FFB300; animation: animatedBackground 0.3s ease 0s 1 normal both, textColorChange 0s linear 0s 1 normal both;}
+    .menu span {display: block;font-size: 4rem;}
+    .menu span.lnr {padding-left: 5px;}
+    .lnr-envelope {margin-top: -15px;}
+
+    @keyframes animatedBackground {
+      0% {background-image: linear-gradient(to right, transparent 0%, transparent 100%); background-repeat: no-repeat; background-position: 1000px 0;}
+      100% {background-image: linear-gradient(to right, #000 0%, #000 100%); background-repeat: no-repeat; background-position: 0 0;}
+    }
+    @keyframes textColorChange {
+      0% {color: #000;}
+      100% {color: #FFB300;}
+    }
+
+    .topbar, .topbar .title {display: none;}
+    body.work .topbar .title,
+    body.about .topbar .title {display: inline;}
+    body.section-open .topbar {transform: translateX(0); opacity: 0.98; visibility: visible;}
+    body.section-open .topbar .back-button {animation: fadeInLeftBig 1s;}
+    body.section-open .topbar .title {animation: fadeInDownBig 1s;}
+    body.section-open .topbar .logo {animation: fadeInRightBig 1s;}
+    .topbar {transform: translateX(100%); transition: all 0.4s; z-index: 2; width: 100%; position: fixed; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(to bottom, #FFA000, #FFB300); opacity: 0; visibility: hidden;}
+    .topbar .title {font-size: 24px;}
+    .topbar .logo {position: initial; width: 35px; height: 35px; background-size: 35px; background-position: center; margin: 10px;}
+    .topbar .back-button {font-size: 3rem; cursor: pointer; padding: 5px;}
+    .topbar .back-button:hover {transform: scale(1.15); transition: all 0.1s;}
+    body.contact .topbar {background: linear-gradient(to bottom, #FFA000, #FFB300);}
+
+    #work, #about, #contact {transition: none;}
+    #work {padding-bottom: 90px;}
+    #work .container {padding-top: 70px;}
+    #work .container a {background-size: cover;}
+    #work .container > * {transition: none;}
+    #about .container, #contact .container {padding-top: 60px;}
+
+    #contact p {font-weight: 300;}
+    #contact .card-panel {padding: 40px;}
+    #contact .antispam {display: none;}
+    #about .collection {font-weight: normal;}
+    #contact p, #contact form, #about .collection {font-family: 'Roboto', sans-serif;}
+    #contact h1 {margin: 0; font-size: 3.5rem; font-weight: 900;}
+    #contact form button {width: 100%;}
+    #contact form input, #contact form textarea {font-size: 16px;}
+    body.contact #contact h1,
+    body.contact #contact p,
+    body.about #about h4, body.about #about .section, body.about #about .collection, body.contact #contact form .row, body.contact #contact form button {animation: fadeInUp 1s ease 1 normal;}
+
+    #about .profile {display: flex; align-items: center; justify-content: center; flex-wrap: wrap;}
+    /*#about .profile h3 {font-size: 5vh;}*/
+    #about .profile img {max-width: 200px;}
+    #about .section {padding-top: 0;}
+    #about .collection h1, #about .collection h2, #about .collection h3, #about .collection h4, #about .collection h5, #about .collection h6 {font-weight: 400;}
+    #about .collection .row {margin-bottom: 0;}
+    #about .badge {margin: 0; height: auto;}
+    #about .chip {font-size: 12px; font-weight: normal; margin: 5px 0 0 0; padding: 0 8px; height: 20px; line-height: 20px;}
+
+    body.work .filterbar {transform: translateY(0); transition: all 0.4s 0.5s; box-shadow: 0 1px 3px #000;}
+    .filterbar {width: 100%; bottom: 0; left: 0; right: 0; position: fixed; z-index: 1041; transform: translateY(100%); opacity: 0.98;}
+    .filterbar ul {margin: 6px auto; display: flex; align-items: center; justify-content: space-around; max-width: 400px;}
+    .filterbar li {opacity: 0.2; cursor: pointer; width: 100%;}
+    .filterbar li.active, .filterbar li:hover {opacity: 1;}
+    .filterbar a {background: none; border: 0; width: 100%;}
+    .filterbar span {font-family: 'Roboto', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 9px; letter-spacing: 1px;}
+    .filterbar li.active a, .filterbar li.active span {color: #007aff;}
+    .filterbar a, .filterbar span {display: block; padding: 0; margin: auto; color: #999; transition: none;}
+    .filterbar i {font-size: 36px;}
+    /*.filterbar i:hover {transform: scale(1.1); animation: scale 0.1s;}*/
+
+
+    /* Magnific Popup Close Button
+    ---------------------------------------------------------------------- */
+
+    .mfp-close {
+      /*
+      background: #FFF !important;
+      color: #333 !important;
+      *-webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      font-size: 48px;
+      */
+      padding: 0 !important;
+      width: 44px !important;
+      position: fixed !important;
+      top: 20px !important;
+      right: 20px !important;
+      color: #FFF !important;
+      font-size: 64px !important;
+      font-weight: normal !important;
+      font-family: initial !important;
+      text-shadow: 0 0 5px rgba(0,0,0,0.6) !important;
+      text-align: center !important;
+    }
+
+    /* Magnific Popup Fade Animation
+    ---------------------------------------------------------------------- */
+    /* overlay at start */
+    .mfp-fade.mfp-bg {opacity: 0; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; transition: all 0.3s ease-out;}
+    /* overlay animate in */
+    .mfp-fade.mfp-bg.mfp-ready {opacity: 0.8;}
+    /* overlay animate out */
+    .mfp-fade.mfp-bg.mfp-removing {opacity: 0;}
+    /* content at start */
+    .mfp-fade.mfp-wrap .mfp-content {opacity: 0; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; transition: all 0.3s ease-out;}
+    /* content animate it */
+    .mfp-fade.mfp-wrap.mfp-ready .mfp-content {opacity: 1;}
+    /* content animate out */
+    .mfp-fade.mfp-wrap.mfp-removing .mfp-content {opacity: 0;}
+
+
+    /* overlay at start */
+    .mfp-fade2.mfp-bg {opacity: 0.9;}
+    /* overlay animate in */
+    .mfp-fade2.mfp-bg.mfp-ready {opacity: 0.9;}
+    /* overlay animate out */
+    .mfp-fade2.mfp-bg.mfp-removing {opacity: 0;}
+    /* content at start */
+    .mfp-fade2.mfp-wrap .mfp-content {opacity: 0; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; transition: all 0.3s ease-out;}
+    /* content animate it */
+    .mfp-fade2.mfp-wrap.mfp-ready .mfp-content {opacity: 1;}
+    /* content animate out */
+    .mfp-fade2.mfp-wrap.mfp-removing .mfp-content {opacity: 0;}
+
+
+
+    /* Magnific Popup Misc
+    ---------------------------------------------------------------------- */
+    .mfp-figure:after {box-shadow: none; background: none;}
+    .mfp-wrap {-webkit-overflow-scrolling: touch;}
+    .image-overlay {position: relative; width: auto; margin: auto; text-align: center;}
+    img.mfp-img, .image-overlay img {padding: 10px; max-width: 100%;}
+
+    .white-popup {position: relative; background: #FFF; padding: 20px; width: auto; max-width: 500px; margin: 20px auto; text-align: center;}
+    #popup {visibility: hidden;}
+
+    .spinner-overlay.mfp-bg {display: none; opacity: 0;}
+    .spinner-overlay.bgFadeIn {opacity: 0.9; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; transition: all 0.3s ease-out;}
+    .spinner-overlay .sk-three-bounce {/*font-size: 26px;*/ position: relative; top: 50%; margin: auto;}
+    .spinner-overlay .sk-three-bounce .sk-child {background-color: #fff;}
+
+    /* MixItUp - Float-based Grid
+    ---------------------------------------------------------------------- */
+    #work .container {/*padding: 1rem .5rem;*/ overflow: hidden;}
+    .mix {width: 100%; float: left; margin: 0 .5rem 1rem; background: #fff; border-radius: 2px; position: relative;}
+    .mix:before {content: ''; display: inline-block; padding-top: 56.25%;}
+    /* Grid Breakpoints
+    ---------------------------------------------------------------------- */
+    /* 2 Columns */
+    @media screen and (min-width: 320px) { .mix {width: calc(50% - 1rem);} }
+    /* 3 Columns */
+    @media screen and (min-width: 541px) { .mix {width: calc(100%/3 - 1rem);} }
+    /* 4 Columns */
+    @media screen and (min-width: 961px) { .mix, .gap {width: calc(100%/4 - 1rem);} }
+    /* 5 Columns */
+    @media screen and (min-width: 1281px) { .mix, .gap {width: calc(100%/5 - 1rem);} }
+
+
+
+    /* MixItUp - Inline-block Grid
+    ---------------------------------------------------------------------- */
+    /* Container
+    ---------------------------------------------------------------------- */
+    /*.container {/*padding: 1rem; text-align: justify; font-size: 0.1px;}*/
+    /*.container:after {content: ''; display: inline-block; width: 100%;}*/
+    /* Target Elements
+    ---------------------------------------------------------------------- */
+    /*.mix, .gap {display: inline-block; vertical-align: top;}*/
+    /*.mix {background: #fff; border-radius: 2px; margin-bottom: 1rem; position: relative;}*/
+    /*.mix:before {content: ''; display: inline-block; padding-top: 56.25%;}*/
+    /* Grid Breakpoints
+    ---------------------------------------------------------------------- */
+    /* 2 Columns */
+    /*.mix, .gap {width: calc(100%/2 - (((2 - 1) * 1rem) / 2));}*/
+    /* 3 Columns */
+    /*@media screen and (min-width: 541px) { .mix, .gap {width: calc(100%/3 - (((3 - 1) * 1rem) / 3));} }*/
+    /* 4 Columns */
+    /*@media screen and (min-width: 961px) { .mix, .gap {width: calc(100%/4 - (((4 - 1) * 1rem) / 4));} }*/
+    /* 5 Columns */
+    /*@media screen and (min-width: 1281px) { .mix, .gap { width: calc(100%/5 - (((5 - 1) * 1rem) / 5));} }*/
+
+
+
+    /* Contact Form Colors */
+    /* =================== */
+    /* labels */
+    .input-field label {color: #9e9e9e;}
+    /* input fields */
+    .input-field input[type=text],
+    .input-field input[type=email],
+    textarea.materialize-textarea {color: #000; border-bottom: 1px solid #9e9e9e; box-shadow: none;}
+    /* input fields + labels */
+    input[type=text]:focus:not([readonly])+label,
+    input[type=email]:focus:not([readonly])+label,
+    textarea.materialize-textarea:focus:not([readonly])+label {color: #9e9e9e; box-shadow: none;}
+    /* input fields on focus */
+    input[type=text]:focus:not([readonly]),
+    input[type=email]:focus:not([readonly]),
+    textarea.materialize-textarea:focus:not([readonly]) {color: #000; border-bottom: 1px solid #000; box-shadow: none;}
+    /* valid color */
+    .input-field input[type=text].valid,
+    .input-field input[type=email].valid,
+    textarea.materialize-textarea.valid {color: #4CAF50; border-bottom: 1px solid #4CAF50; box-shadow: none;}
+    /* invalid color */
+    .input-field input[type=text].invalid,
+    .input-field input[type=email].invalid,
+    textarea.materialize-textarea.invalid {color: #F44336; border-bottom: 1px solid #F44336; box-shadow: none;}
+
+    input:not([type]):focus:not([readonly])+label,
+    input[type=text]:not(.browser-default):focus:not([readonly])+label,  input[type=email]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {color: #000;}
+
+
+    @media only screen and (min-width: 320px) {
+    }
+    @media only screen and (min-width: 375px) {
+    }
+    @media only screen and (min-width: 414px) {
+    }
+    @media only screen and (min-width: 480px) {
+      .logo {background-size: 70px; background-position: 96% top;}
+      .menu {text-align: left; /*position: absolute; bottom: 0; top: 50%; right: 0; left: 0; transform: translate(0, -50%);*/}
+      .menu ul {}
+      .menu a {padding: 2px 30px; font-size: 8vw; line-height: 6vw;}
+      .menu span {padding: 0 20px 10px 0;}
+      .menu span, .menu .text {display: inline; vertical-align: middle;}
+      .topmenu a {margin: 10px; font-size: 18px;}
+      .lnr-envelope {margin:0;}
+    }
+    @media only screen and (min-width: 568px) {
+      /*body.contact .topbar {background: none;}*/
+      #contact .container {width: 75%; /*margin-top: -40px;*/}
+    }
+    @media only screen and (min-width: 601px) {
+      #about .profile img {max-width: 100%;}
+    }
+    @media only screen and (min-width: 640px) {
+      #contact .container {width: 70%;}
+    }
+    @media only screen and (min-width: 667px) {
+      #contact .container {width: 65%;}
+    }
+    @media only screen and (min-width: 736px) {
+      #contact .container {width: 60%;}
+    }
+    @media only screen and (min-width: 800px) {
+      .logo {position: absolute; top: 20px; left: 20px; width: 100px; background-size: 90px; background-position: center;}
+      main.container .left {position: absolute; top: 0; bottom: 0; left: 0; width: 50%; height: 100%; box-shadow: -40px 0px 100px #000;}
+      .right {display: block;}
+      .menu {text-align: right;position: absolute; right: 0; bottom: 60px; width: 100%;}
+      .menu ul {/*position: absolute; top: auto; left: auto; bottom: 0; width: 100%;*/}
+      .menu a {padding: 8px 50px 18px 0;}
+      .menu span {display: none;}
+      #contact .container {width: 55%}
+      img.mfp-img, .image-overlay img {max-width: 800px;}
+    }
+    @media only screen and (min-width: 960px) {
+      #contact .container {width: 50%}
+    }
+    @media only screen and (min-width: 1024px) {
+      #contact .container {width: 45%}
+    }
+    @media only screen and (min-width: 1366px) {
+      #contact .container {width: 40%}
+    }
+    @media only screen and (min-width: 2000px) {
+      .menu a {font-size: 6vw; line-height: 5vw;}
+    }
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+      .logo {width: 200px; height: 200px; background-size: 150px; background-position: center; margin: auto;}
+      .menu {/*position: absolute; left: 50%; transform: translate(-50%, -40%);right: auto;*/}
+      .menu a {font-size: 12vw; padding: 2vh 14vw;}
+      .menu span {font-size: 18vw; padding-right: 30px;}
+      #contact .container {width: 65%}
+      #contact {display: flex; align-items: center; justify-content: center; height: 100%;}
+    }
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+      main.container .left {width: 100%;}
+      .logo {width: 100%; height: 30%; top: auto; left: auto; background-position: center; background-size: 150px;}
+      .menu {text-align: left; /*width: 100%; left: 50%; bottom: 0; transform: translate(-50%, 0);bottom:60px;*/}
+      .menu a {font-size: 10vw; padding: 2vh 22vw;}
+      .menu span, .menu .text {display: inline;}
+      .menu span {font-size: 8rem;}
+      #contact .container {width: 50%}
+      #contact {display: flex; align-items: center; justify-content: center; height: 100%;}
+    }
+
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <div class="left">
+      <div class="logo">Giancarlo Abadia</div>
+      <nav class="menu">
+        <ul>
+          <li><a href="#work" data-ref="work" class="open work"><span class="lnr lnr-book"></span><div class="text">Work.</div></a></li>
+          <li><a href="#about" data-ref="about" class="open about"><span class="lnr lnr-user"></span><div class="text">About.</div></a></li>
+          <li><a href="#contact" data-ref="contact" class="open contact"><span class="lnr lnr-envelope"></span><div class="text">Contact.</div></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="right">
+      <div class="work"></div>
+      <div class="about"></div>
+      <div class="contact"></div>
+    </div>
+  </main>
+
+  <div class="main">
+    <div class="content">
+      <div class="topbar">
+        <i class="back-button material-icons">arrow_back</i>
+        <ul class="topmenu">
+          <li><a href="#work" data-ref="work" class="open work">Work</a></li>
+          <li><a href="#about" data-ref="about" class="open about">About</a></li>
+          <li><a href="#contact" data-ref="contact" class="open contact">Contact</a></li>
+        </ul>
+        <!-- <span class="title"></span> -->
+        <div class="logo"></div>
+      </div>
+      <div class="filterbar center-align grey lighten-4">
+        <ul>
+          <li class="active"><a data-filter="all"><i class="material-icons">apps</i></a><span>All</span></li>
+          <li><a data-filter=".category-a"><i class="material-icons">devices</i></a><span>Digital</span></li>
+          <li><a data-filter=".category-b"><i class="material-icons">import_contacts</i></a><span>Print</span></li>
+          <li><a data-filter=".category-c"><i class="material-icons">web</i></a><span>Web</span></li>
+          <li><a data-filter=".category-d"><i class="material-icons">brightness_auto</i></a><span>Identity</span></li>
+        </ul>
+      </div>
+  		<div class="wrapper">
+        <div id="work">
+
+          <div class="container" data-ref="mixitup-container">
+
+            <a href="work.html" class="ajax-popup-link-1 mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/01-1.jpg');"></a>
+            <a href="work/02.png" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/02.png');"></a>
+            <a href="work/03.jpg" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/03.jpg');"></a>
+            <a href="work/04.jpg" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/04.jpg');"></a>
+            <a href="work/05.png" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/05.png');"></a>
+            <a href="work.html" class="ajax-popup-link-2 mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/06-1.png');"></a>
+            <a href="work.html" class="ajax-popup-link-3 mix category-c" data-ref="mixitup-target" style="background-image: url('work/thumbs/07-2.png');"></a>
+            <a href="work.html" class="ajax-popup-link-4 mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/08-1.png');"></a>
+            <a href="work.html" class="ajax-popup-link-5 mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/09-1.png');"></a>
+            <a href="work/10.png" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/10.png');"></a>
+            <a href="work.html" class="ajax-popup-link-6 mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/11-1.png');"></a>
+            <a href="work/12.png" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/12.png');"></a>
+            <a href="work/13.jpg" class="mix category-b" data-ref="mixitup-target" style="background-image: url('work/thumbs/13.jpg');"></a>
+            <a href="work.html" class="ajax-popup-link-7 mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/14-1.png');"></a>
+            <a href="work.html" class="ajax-popup-link-8 mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/15-1.png');"></a>
+            <a href="work.html" class="ajax-popup-link-9 mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/16-1.jpg');"></a>
+            <a href="work.html" class="ajax-popup-link-10 mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/17-1.png');"></a>
+            <a href="work.html" class="ajax-popup-link-11 mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/18-1.png');"></a>
+            <a href="work/19.jpg" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/19.jpg');"></a>
+            <a href="work.html" class="ajax-popup-link-12 mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/20-1.png');"></a>
+            <a href="work/24.png" class="mix category-b" data-ref="mixitup-target" style="background-image: url('work/thumbs/24.png');"></a>
+            <a href="work/25.jpg" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/25.jpg');"></a>
+            <a href="work/27.jpg" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/27.jpg');"></a>
+            <a href="work/31.png" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/31.png');"></a>
+            <a href="work/32.png" class="mix category-c" data-ref="mixitup-target" style="background-image: url('work/thumbs/32.png');"></a>
+            <a href="work/37.png" class="mix category-b" data-ref="mixitup-target" style="background-image: url('work/thumbs/37.png');"></a>
+            <a href="work/40.png" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/40.png');"></a>
+            <a href="work/41.png" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/41.png');"></a>
+            <a href="work/45.png" class="mix category-a" data-ref="mixitup-target" style="background-image: url('work/thumbs/45.png');"></a>
+          </div>
+
+          <!-- MixItUp - Float-based Grid -->
+          <!-- <div class="container" data-ref="mixitup-container">
+              <div class="mix"></div>
+              <div class="mix"></div>
+              <div class="mix"></div>
+              <div class="mix"></div>
+              <div class="mix"></div>
+              <div class="mix"></div>
+              <div class="mix"></div>
+              <div class="mix"></div>
+          </div> -->
+
+          <!-- MixItUp - Inline-block Grid -->
+          <!-- <div class="container" data-ref="mixitup-container">
+              <div class="mix"></div>
+              <div class="mix"></div>
+              <div class="mix"></div>
+              <div class="mix"></div>
+              <div class="mix"></div>
+              <div class="mix"></div>
+              <div class="mix"></div>
+              <div class="mix"></div>
+
+              <div class="gap"></div>
+              <div class="gap"></div>
+              <div class="gap"></div>
+          </div> -->
+
+        </div>
+
+        <div id="about">
+          <div class="container">
+            <div class="row">
+              <div class="col s12 m7">
+                <div class="center profile section">
+                  <div class="col s12 m5">
+                    <img class="responsive-img circle "src="img/giancarlo.jpg">
+                  </div>
+                  <div class="col s12 m7">
+                    <h4>Giancarlo Abadia</h4>
+                    <h6>Graphic Designer</h6>
+                  </div>
+                </div>
+                <!-- <div class="card horizontal">
+                  <div class="card-image">
+                    <img src="img/giancarlo.jpg">
+                  </div>
+                  <div class="card-stacked">
+                    <div class="card-content">
+                      <h4>Giancarlo Abadia</h4>
+                    </div>
+                    <div class="card-action">
+                      <h6>Graphic Designer</h6>
+                    </div>
+                  </div>
+                </div> -->
+                <div class="section">
+                  <h4>Education</h4>
+                  <div class="collection z-depth-1">
+                    <div class="collection-item">
+                      <div class="row valign-wrapper">
+                        <div class="col s12 m11">
+                          <h5>Universidad de Panamá</h5>
+                          <h6>Licentiate's Degree</h6>
+                        </div>
+                        <div class="col s6 m5">
+                          <span class="new badge deep-orange accent-3" data-badge-caption="">2004-2010</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="collection-item">
+                      <div class="row valign-wrapper">
+                        <div class="col s12 m11">
+                          <h5>Instituto Episcopal San Cristóbal</h5>
+                          <h6>Bachelor’s Degree</h6>
+                        </div>
+                        <div class="col s6 m5">
+                          <span class="new badge deep-orange accent-3" data-badge-caption="">1991-2003</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section">
+                  <h4>Experience</h4>
+                  <div class="collection z-depth-1">
+                    <div class="collection-item">
+                      <div class="row valign-wrapper">
+                        <div class="col s12 m11">
+                          <h5>Cervecería Nacional</h5>
+                          <h6>Graphic Designer</h6>
+                        </div>
+                        <div class="col s6 m5">
+                          <span class="new badge deep-orange accent-3" data-badge-caption="">2011-2017</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="collection-item">
+                      <div class="row valign-wrapper">
+                        <div class="col s12 m11">
+                          <h5>lorenamoreno publicidad</h5>
+                          <h6>Graphic Designer</h6>
+                        </div>
+                        <div class="col s6 m5">
+                          <span class="new badge deep-orange accent-3" data-badge-caption="">2011</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="collection-item">
+                      <div class="row valign-wrapper">
+                        <div class="col s12 m11">
+                          <h5>Cable &amp; Wireless Panamá, S.A.</h5>
+                          <h6>Graphic Designer <div class="blue white-text chip">Internship</div></h6>
+                        </div>
+                        <div class="col s6 m5">
+                          <span class="new badge deep-orange accent-3" data-badge-caption="">2009-2010</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="collection-item">
+                      <div class="row valign-wrapper">
+                        <div class="col s12 m11">
+                          <h5>Avetti Commerce</h5>
+                          <h6>Web Developer</h6>
+                        </div>
+                        <div class="col s6 m5">
+                          <span class="new badge deep-orange accent-3" data-badge-caption="">2008</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m4 offset-m1">
+                <div class="section">
+                  <h4>Skills</h4>
+                  <div class="collection z-depth-1">
+                    <div class="collection-item">
+                      Graphic Design<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 90%"></div></div>
+                      Web Design<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 70%"></div></div>
+                      Web Development<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 60%"></div></div>
+                      Photography<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 50%"></div></div>
+                      Animation<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 60%"></div></div>
+                      Video editing<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 60%"></div></div>
+                      Illustration<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 30%"></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section">
+                  <h4>Interests</h4>
+                  <div class="collection z-depth-1">
+                    <div class="collection-item">
+                      Computers &amp; Technology<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 90%"></div></div>
+                      Art &amp; Design<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 80%"></div></div>
+                      Photography<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 70%"></div></div>
+                      Animation<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 90%"></div></div>
+                      Music<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 80%"></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section">
+                  <h4>Languages</h4>
+                  <div class="collection z-depth-1">
+                    <div class="collection-item">
+                      Spanish<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 100%"></div></div>
+                      English<div class="deep-orange lighten-4 progress"><div class="deep-orange darken-2 determinate" style="width: 85%"></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="contact">
+          <div class="container">
+            <div class="col s12">
+              <div class="card-panel white">
+                <h1>Contact.</h1>
+                <p class="flow-text">For business inquiries or work requests, please use the form below.</p>
+                <form method="post" name="index" id="indexform">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="name" type="text" name="name" class="validate" required>
+                      <label for="name">Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="email" type="email" name="email" class="validate" required>
+                      <label for="email" data-error="invalid">Email</label>
+                    </div>
+                  </div>
+                  <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="message" class="materialize-textarea" name="message" required></textarea>
+                      <label for="message">Message</label>
+                    </div>
+                  </div>
+                  <button class="btn waves-effect btn-large deep-orange accent-3" type="submit" name="action" value="Send">Submit</button>
+                  <button type="submit" id="popup" class="popup-modal" href="#modal-results">Popup</button>
+                  <div id="modal-results" class="white-popup mfp-hide"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  	</div>
+  </div>
+
+  <div class="spinner-overlay mfp-bg">
+    <div class="sk-three-bounce">
+      <div class="sk-child sk-bounce1"></div>
+      <div class="sk-child sk-bounce2"></div>
+      <div class="sk-child sk-bounce3"></div>
+    </div>
+  </div>
+
+	<script src="js/classie.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/mixitup.min.js"></script>
+  <script src='js/wow.min.js'></script>
+
+  <script type="text/javascript">
+    $("#indexform").submit(function(event) {
+      $('.spinner-overlay').fadeIn(300).addClass('bgFadeIn');
+      event.preventDefault();
+      var formdata = $(this).serialize();
+      $.ajax({
+        type: "POST",
+        url: "submit.php",
+        data: formdata,
+        success: function(msg) {
+          $("#modal-results").html(msg);
+          $('.spinner-overlay').hide().removeClass('bgFadeIn');
+        },
+        error: function() {
+          $("#modal-results").html("Failure");
+        }
+
+      }).done(function() {
+        $('.popup-modal').magnificPopup({
+          type:             'inline',
+          mainClass:        'mfp-fade2',
+          removalDelay:     300,
+          fixedBgPos:       true,
+          fixedContentPos:  true,
+          preloader:        false,
+          modal:            true
+        });
+        $(document).on('click', '.popup-modal-close', function (e) {
+          e.preventDefault();
+          $.magnificPopup.close();
+        });
+        $('#popup').click();
+      });
+    });
+  </script>
+
+  <script type="text/javascript">
+
+    new WOW().init();
+
+    // Big icon sliding right from main menu hover
+    $('.menu a').hover(function() {
+      var activeHover = $(this).attr('data-ref');
+      $('.right div[class = '+activeHover+']').addClass('active');
+    }).mouseleave(function() {
+      $('.right div').removeClass('active');
+    });
+
+    $(".wrapper>div").hide();
+
+    // Show content based on menu item click
+    $(function () {
+      $(".menu a, .topmenu a").click(function () {
+        var pageName = $(this).attr("data-ref");
+
+        $('.topmenu a[data-ref = '+pageName+']').addClass('active');
+
+        // Add classes to body
+        $("body").removeClass();
+        $("body").addClass("section-open");
+        $("body").addClass(pageName);
+
+        // $("body.cleanstate").addClass("section-open").removeClass("pageName");
+
+        // Set currently open page name on top
+        $('.title').text(pageName);
+
+        $(".wrapper>div").not($(this).attr("href")).fadeOut("slow");
+        $($(this).attr("href")).delay(600).fadeIn("slow");
+
+        // Remove class names from body when back button is clicked
+        $(".back-button").click( function() {
+          $("body").removeClass();
+          $(".topmenu a").removeClass("active");
+          $(".wrapper>div").fadeOut("slow");
+        });
+
+        return false;
+      });
+    });
+
+    // MixItUp initialization
+    var containerEl = document.querySelector('[data-ref~="mixitup-container"]');
+    var mixer = mixitup(containerEl, {
+      selectors: {
+        target: '[data-ref~="mixitup-target"]'
+      }
+    });
+
+    // Top menu "active" functionality
+    $(".topmenu a").click( function() {
+      $(".topmenu a").removeClass("active");
+      $(this).addClass("active");
+    });
+
+    // Filter bar "active" functionality
+    $(".filterbar li").click( function() {
+      $(".filterbar li").removeClass("active");
+      $(this).addClass("active");
+    });
+
+    // Work section grid boxes "fadeInUp" effect activation
+    var children = $(".mix");
+    var index = 0;
+
+    $(children).addClass('hide');
+
+    var checkPage = function(){
+      if($("body").hasClass("work")) {
+        setTimeout(function () {
+          function addClassToNextChild() {
+            if (index == children.length) return;
+            children.eq(index++).removeClass("hide").addClass("fadeInUp animated").delay(2000).queue(function(){
+              $(this).removeClass('fadeInUp animated');
+              $(this).dequeue();
+            });
+            window.setTimeout(addClassToNextChild, 1000);
+          }
+          addClassToNextChild()
+        }, 1000);
+      }
+    }
+
+    var intrvl = setInterval( checkPage, 300 );
+
+    $(document).ready(function() {
+
+      $('#work .container').magnificPopup({
+        type:             'image',
+        delegate:         'a',
+        mainClass:        'mfp-fade',
+        overflowY:        'scroll',
+        removalDelay:     300,
+        fixedBgPos:       true,
+        fixedContentPos:  true,
+        closeOnBgClick:   false,
+        image: {
+          verticalFit:    false,
+          cursor:         null
+        }
+      });
+
+      $('.ajax-popup-link-1').magnificPopup({ type: 'ajax', mainClass: 'mfp-fade', overflowY: 'scroll', removalDelay: 300, fixedBgPos: true, fixedContentPos: true, callbacks: { parseAjax: function(mfpResponse) { mfpResponse.data = $(mfpResponse.data).filter('#1'); } } });
+      $('.ajax-popup-link-2').magnificPopup({ type: 'ajax', mainClass: 'mfp-fade', overflowY: 'scroll', removalDelay: 300, fixedBgPos: true, fixedContentPos: true, callbacks: { parseAjax: function(mfpResponse) { mfpResponse.data = $(mfpResponse.data).filter('#2'); } } });
+      $('.ajax-popup-link-3').magnificPopup({ type: 'ajax', mainClass: 'mfp-fade', overflowY: 'scroll', removalDelay: 300, fixedBgPos: true, fixedContentPos: true, callbacks: { parseAjax: function(mfpResponse) { mfpResponse.data = $(mfpResponse.data).filter('#3'); } } });
+      $('.ajax-popup-link-4').magnificPopup({ type: 'ajax', mainClass: 'mfp-fade', overflowY: 'scroll', removalDelay: 300, fixedBgPos: true, fixedContentPos: true, callbacks: { parseAjax: function(mfpResponse) { mfpResponse.data = $(mfpResponse.data).filter('#4'); } } });
+      $('.ajax-popup-link-5').magnificPopup({ type: 'ajax', mainClass: 'mfp-fade', overflowY: 'scroll', removalDelay: 300, fixedBgPos: true, fixedContentPos: true, callbacks: { parseAjax: function(mfpResponse) { mfpResponse.data = $(mfpResponse.data).filter('#5'); } } });
+      $('.ajax-popup-link-6').magnificPopup({ type: 'ajax', mainClass: 'mfp-fade', overflowY: 'scroll', removalDelay: 300, fixedBgPos: true, fixedContentPos: true, callbacks: { parseAjax: function(mfpResponse) { mfpResponse.data = $(mfpResponse.data).filter('#6'); } } });
+      $('.ajax-popup-link-7').magnificPopup({ type: 'ajax', mainClass: 'mfp-fade', overflowY: 'scroll', removalDelay: 300, fixedBgPos: true, fixedContentPos: true, callbacks: { parseAjax: function(mfpResponse) { mfpResponse.data = $(mfpResponse.data).filter('#7'); } } });
+      $('.ajax-popup-link-8').magnificPopup({ type: 'ajax', mainClass: 'mfp-fade', overflowY: 'scroll', removalDelay: 300, fixedBgPos: true, fixedContentPos: true, callbacks: { parseAjax: function(mfpResponse) { mfpResponse.data = $(mfpResponse.data).filter('#8'); } } });
+      $('.ajax-popup-link-9').magnificPopup({ type: 'ajax', mainClass: 'mfp-fade', overflowY: 'scroll', removalDelay: 300, fixedBgPos: true, fixedContentPos: true, callbacks: { parseAjax: function(mfpResponse) { mfpResponse.data = $(mfpResponse.data).filter('#9'); } } });
+      $('.ajax-popup-link-10').magnificPopup({ type: 'ajax', mainClass: 'mfp-fade', overflowY: 'scroll', removalDelay: 300, fixedBgPos: true, fixedContentPos: true, callbacks: { parseAjax: function(mfpResponse) { mfpResponse.data = $(mfpResponse.data).filter('#10'); } } });
+      $('.ajax-popup-link-11').magnificPopup({ type: 'ajax', mainClass: 'mfp-fade', overflowY: 'scroll', removalDelay: 300, fixedBgPos: true, fixedContentPos: true, callbacks: { parseAjax: function(mfpResponse) { mfpResponse.data = $(mfpResponse.data).filter('#11'); } } });
+      $('.ajax-popup-link-12').magnificPopup({ type: 'ajax', mainClass: 'mfp-fade', overflowY: 'scroll', removalDelay: 300, fixedBgPos: true, fixedContentPos: true, callbacks: { parseAjax: function(mfpResponse) { mfpResponse.data = $(mfpResponse.data).filter('#12'); } } });
+
+    });
+
+
+    // $(".menu .open.work").click( function() {
+    //   if ($("body").hasClass("work")) {
+    //     $("body").removeClass("work");
+    //   } else {
+    //     $("body").addClass("work");
+    //   };
+    // });
+
+    // $(".menu .open.work").click( function() {
+    //   $("body").addClass("work");
+    //   setTimeout(function () {
+    //     $("body").removeClass("work");
+    //   }, 800);
+    // });
+
+    // $(".work").hover( function(){
+    //   $(".workBg").toggleClass("active");}
+    // );
+    // $(".about").hover( function(){
+    //   $(".aboutBg").toggleClass("active");}
+    // );
+    // $(".contact").hover( function(){
+    //   $(".contactBg").toggleClass("active");}
+    // );
+
+    // $(document).ready(function(){
+    //     $(".open").click(function(){
+    //         alert($("#work").hasClass("active"));
+    //     });
+    // });
+
+    // var checkPage = function(){
+    //   $('.wrapper').children().each(function() {
+    //     if($(this).css('display') != 'none') {
+    //       var pageName = $(this).attr('id');
+    //       $('.title').text(pageName);
+    //     }
+    //   });
+    // }
+
+    // var checkPage = function(){
+    // var pageName = $('div:visible', '.wrapper').attr('id');
+    //   $('.title').text(pageName);
+    // }
+
+
+  </script>
+
+</body>
+</html>

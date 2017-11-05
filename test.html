@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://rawgit.com/dimsemenov/Magnific-Popup/master/dist/jquery.magnific-popup.js"></script>
+
+    <link rel="stylesheet" href="https://rawgit.com/dimsemenov/Magnific-Popup/master/dist/magnific-popup.css">
+    <style>
+    .white-popup {
+	  position: relative;
+	  background: #FFF;
+	  padding: 20px;
+	  width: auto;
+	  max-width: 500px;
+	  margin: 20px auto;
+	}
+	#popup {
+		visibility: hidden;
+	}
+
+</style>
+</head>
+<body>
+                <form method="post" name="index" id="indexform">
+                <input type="text" name="name" placeholder="NAME"><br/>
+                <input type="text" name="email" placeholder="EMAIL"><br/>
+                <textarea rows="3" name="message" placeholder="MESSAGE"></textarea><br/>
+                <input name="sendData" type="submit" value="SEND">
+                <button  type="submit" id="popup" class="popup-modal" href="#modal-results">Popup</button>
+                <div id="modal-results" class="white-popup mfp-hide">
+				<p><a class="popup-modal-dismiss" href="#">Dismiss</a></p>
+				</div>
+                </form>
+                <script type="text/javascript">
+                	$("#indexform").submit(function(event) {
+		            event.preventDefault();
+		            var formdata = $(this).serialize();
+		            $.ajax({
+		                type: "POST",
+		                url: "submit.php",
+		                data: formdata,
+		                success: function(msg) {
+		                    $("#modal-results").html(msg);
+		                },
+		                error: function() {
+		                    $("#modal-results").html("Failure");
+		                }
+
+		            }).done(function() {
+		                $('.popup-modal').magnificPopup({
+		                    type: 'inline'
+
+		                });
+		                $('#popup').click();
+		            });
+		       		});
+                </script>
+</body>
+</html>

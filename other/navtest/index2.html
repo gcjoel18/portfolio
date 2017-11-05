@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+  <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+  <script src="js/modernizr.js"></script> <!-- Modernizr -->
+<head>
+    <style>
+      body {background-color: #FFB300;}
+    </style>
+  </head>
+  <body>
+    <main>
+      <ul id="menu">
+        <li><a href="#link1" class="open-close" style="color:#000;font-size:36px;">Link 1</a></li>
+        <li><a href="#link2" class="open-close" style="color:#000;font-size:36px;">Link 2</a></li>
+        <li><a href="#link3" class="open-close" style="color:#000;font-size:36px;">Link 3</a></li>
+      </ul>
+    </main>
+    <div class="main">
+      <div id="link1" class="cd-nav">
+    		<div class="cd-navigation-wrapper">
+          <p><a class="open-close" style="color:#FFF;cursor:pointer;">Close</a></p>
+
+          <p style="color:#FFF;font-size:36px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nunc eros, commodo vel magna non, sagittis finibus metus. Duis rhoncus nec elit nec eleifend. Sed vestibulum, dolor quis elementum mattis, libero dui maximus mauris, nec vulputate sem nisl et sem. Maecenas viverra urna ac consectetur suscipit. Cras dolor erat, commodo et fringilla et, tincidunt eget lectus. Ut sit amet nisl vel nibh congue laoreet vitae in libero. Curabitur consectetur ut felis sit amet gravida. Nulla vitae tristique sapien. Fusce vitae facilisis turpis. Morbi rutrum tortor sit amet quam efficitur sollicitudin.</p>
+        </div>
+    	</div>
+
+      <div id="link2" class="cd-nav">
+    		<div class="cd-navigation-wrapper">
+          <p><a class="open-close" style="color:#FFF;cursor:pointer;">Close</a></p>
+
+          <p style="color:#FFF;font-size:36px;">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec eu lacus sit amet urna tempus convallis. Duis et vehicula lacus. Nulla facilisi. Pellentesque sollicitudin, purus non fringilla commodo, nunc sapien ornare mi, sit amet aliquet odio nibh quis metus. Duis venenatis sem egestas, consequat dui eget, suscipit massa. Etiam tempor commodo molestie. Aliquam egestas mauris sed lacus pellentesque lacinia. Maecenas vel ultricies ex. Nunc semper semper convallis. Vivamus vel commodo dui. Ut tristique dapibus nulla, ut sollicitudin quam. Donec at tincidunt dui.</p>
+        </div>
+    	</div>
+
+      <div id="link3" class="cd-nav">
+    		<div class="cd-navigation-wrapper">
+          <p><a class="open-close" style="color:#FFF;cursor:pointer;">Close</a></p>
+
+          <p style="color:#FFF;font-size:36px;">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse a condimentum dolor. In condimentum sagittis mi nec accumsan. Quisque maximus tempor ex, ac gravida ante pharetra sed. Ut ut risus commodo, tincidunt elit vitae, posuere ligula. Fusce accumsan eu lorem id elementum. Aenean vitae orci vulputate, mollis tellus quis, dapibus arcu. Mauris eu dui sit amet sem aliquet placerat et sit amet nisi. In tempus massa ac purus condimentum, sed auctor sem tincidunt. Sed velit purus, placerat quis libero in, euismod posuere tellus.</p>
+        </div>
+    	</div>
+    </div>
+    <script src="js/jquery-2.1.1.js"></script>
+    <script>
+    // jQuery(document).ready(function($){
+    // 	var isLateralNavAnimating = false;
+    //
+    // 	//open/close lateral navigation
+    // 	$('.open-close').on('click', function(event){
+    // 		event.preventDefault();
+    // 		//stop if nav animation is running
+    // 		if( !isLateralNavAnimating ) {
+    // 			if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true;
+    //
+    // 			$('body').toggleClass('navigation-is-open');
+    // 			$('.cd-navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+    // 				//animation is over
+    // 				isLateralNavAnimating = false;
+    // 			});
+    // 		}
+    // 	});
+    // });
+
+    $(".open-close").click(function () {
+      $("body").toggleClass("navigation-is-open");
+    });
+
+    $(function () {
+
+      $("#menu a").click(function () {
+        $(".main>div").not($(this).attr("href")).hide(); //Hide All Other Div in main
+
+        $($(this).attr("href")).show(); //Show the target div
+        return false; // stop click default
+      });
+    });
+    </script>
+  </body>
+</html>

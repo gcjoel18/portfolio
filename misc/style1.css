@@ -1,0 +1,67 @@
+body {background-color: #FFB300;overflow: hidden;font-family: 'Montserrat', sans-serif;/*font-size: 40px;*/}
+.content {}
+.left {z-index: 1; width: 100%;height: 45%;position: absolute;left: 0;right: 0;bottom: 0;}
+.workBg, .aboutBg, .contactBg {display: none;opacity: 0;visibility: hidden; width: 100%;height: 51%;position: absolute;left: 0;right: 0;top: 4%;transform: translateX(100%);transition: all 0.5s;}
+.logo {z-index: 2; display: block;text-indent: -9999px;width: 15%;height: 15%;background: url(logo.svg) no-repeat;position:absolute;top: 20px;left: 20px;}
+.menu {position: relative;top:50%;transform: translateY(-50%);width: 100%;text-align: right;}
+.menu li {}
+.menu a {display: block;color:#000;text-decoration: none;text-transform: lowercase;font-size: 10vh;padding: 5px 30px 5px 0;}
+.menu a:hover {/*background-color: #000;color:#FFB300;*/animation: animatedBackground 0.4s ease 0s 1 normal both, textColorChange 0s linear 0.1s 1 normal both;}
+.menu span {display: none;}
+.workBg.active, .aboutBg.active, .contactBg.active {visibility: visible; transform: translateX(10%);opacity: 1;transition: all 0.5s 0.2s;}
+.workBg::after, .aboutBg::after, .contactBg::after {content: "";width: 100%; height: 100%; display: block; background-repeat: no-repeat; background-position: right center; background-size: contain;}
+.workBg::after {background-image: url('book-e.svg');}
+.aboutBg::after {background-image: url('user-e.svg');}
+.contactBg::after {background-image: url('envelope-e.svg');}
+
+@keyframes animatedBackground {
+  from {background-image: linear-gradient(to right, black 100%, black 100%); background-repeat: no-repeat; background-position: 1000px 0;}
+  to {background-image: linear-gradient(to right, black 0%, black 0%); background-repeat: no-repeat; background-position: 0 0;}
+}
+@keyframes textColorChange {
+  from {color: #000;}
+  to {color: #FFB300;}
+}
+
+/*.left {width: 50%; box-shadow: -30px 0px 60px #000;}
+.right{display: block;}
+.logo {width: 200px;height: 200px;margin: 30px auto;}
+.menu {bottom: 0;}
+.menu ul {margin: 40px 0;}
+.menu li {text-align: left; padding:0;margin: 0;float: none;}
+.menu a {position: relative; display: block;}
+.menu span {display: inline-block;padding: 20px;}
+.menu div {display: inline-block; font-size: 50px; position: absolute;top:50%;transform: translateY(-50%);}*/
+
+@media only screen and (min-width: 320px) {
+}
+@media only screen and (min-width: 375px) {
+}
+@media only screen and (min-width: 414px) {
+}
+@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 568px) {
+}
+@media only screen and (min-width: 640px) {
+
+}
+@media only screen and (min-width: 667px) {
+}
+@media only screen and (min-width: 736px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 960px) {
+}
+@media only screen and (min-width: 1024px) {
+  .left {width: 50%; height: 100%; left: 0; right: auto; box-shadow: -30px 0px 60px #000;}
+  .workBg, .aboutBg, .contactBg {width: 45%; height: 80%; left: auto; right: 0;bottom:0;margin:auto;}
+  .workBg.active, .aboutBg.active, .contactBg.active {transform: translateX(0);}
+  .workBg::after, .aboutBg::after, .contactBg::after {background-position: right center;}
+  .menu {position: absolute;transform: translateY(0);}
+  .menu a {font-size: 12vh;}
+  .menu span {display: block;}
+}
+@media only screen and (min-width: 1366px) {
+}

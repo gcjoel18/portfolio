@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Giancarlo Abadia</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani:600" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!--Import animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- <link type="text/css" rel="stylesheet" href="css/hamburger.css" /> -->
+
+    <style>
+      html, body {width: 100%; height: 100%; overflow-x: hidden;}
+      body {background-color: #f2f2f2;}
+
+      /* Full screen menu overlay toggle button (mobile only) */
+      body.overlay-active .menuToggleArea .btn {transform: scale(70); transition-duration: 0.7s; cursor: default;}
+      body.overlay-active .menuToggleArea .btn.darken-4 {opacity: 1; transform: scale(1.6); transition: all 0.2s; cursor: default; top: 40px; right: 10px;}
+      body.overlay-active .menuToggleArea .menu-icon {opacity: 0; visibility: hidden;}
+      body.overlay-active .menuToggleArea .close-icon {opacity: 1; visibility: visible;}
+      body.overlay-active .menuToggleArea .menu-icon, body.overlay-active .menuToggleArea .close-icon {transform: rotate(-90deg); transition: all 0.2s; top: 50px; right: 10px; font-size: 50px;}
+      /* Toggle button */
+      .menuToggleArea {float: right; cursor: pointer; width: 40px; height: 100%; position: relative; bottom: 0; right: 0; z-index: 999;}
+      .menuToggleArea .btn {transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: none;}
+      .menuToggleArea .btn.darken-4 {opacity: 0; transition: all 0.5s; box-shadow: none; z-index: 2;}
+      /* Toggle button hamburger icon */
+      .menuToggleArea .menu-icon {opacity: 1; visibility: visible; font-size: 30px; transition: all 0.5s;}
+      /* Toggle button close icon */
+      .menuToggleArea .close-icon {opacity: 0; visibility: hidden; font-size: 36px; transition: all 0.5s;}
+      /* All (toggle button & icons) */
+      .menuToggleArea .menu-icon, .menuToggleArea .close-icon {z-index: 1000; color: #FFF; cursor: pointer;}
+      .menuToggleArea, .menuToggleArea .btn, .menuToggleArea .menu-icon, .menuToggleArea .close-icon {width: 40px; position: absolute; top: 0; right: 0; bottom: 0; margin: auto; text-align: center;}
+
+      @media only screen and (min-width: 993px) {.menuToggleArea {display: none;}}
+      @media only screen and (max-width: 992px) {nav .brand-logo {left: 0; transform: translateX(0);}}
+      @media only screen and (min-height: 420px) { .filter-area {} }
+
+      nav {font-family: 'Rajdhani', sans-serif; text-transform: uppercase;}
+      nav .brand-logo {font-size: 18px;}
+
+      /* Filter buttons */
+      .filter-area {z-index: 1; width: 56px; height: 56px;}
+      .filter-area .filter-btn, .filter-area .close-btn {position: absolute; right: 0; bottom: 0;}
+      .filter-area .filter-btn i, .filter-area .close-btn i {font-size: 36px;}
+      .filter-area .filter-btn {transition: all 0.2s ease-out;}
+      .filter-area .filter-btn, .filter-area.active .close-btn {visibility: visible;}
+      .filter-area .close-btn, .filter-area.active .filter-btn {visibility: hidden;}
+      .filter-area.active .filter-btn, .filter-area .close-btn {transform: scale(0); transition: all 0.2s ease-out;}
+      .filter-area.active .close-btn {transform: scale(1);}
+      .fixed-action-btn ul {bottom: 56px;}
+      .fixed-action-btn ul li {margin-bottom: 10px;}
+
+      #work .container {padding: 30px 0; text-align: justify; font-size: 0.1px;}
+      #work .container:after {content: ''; display: inline-block; width: 100%;}
+
+      /* MixItUp Grid Floats */
+      /*.mix {float: left; margin: 0 .5rem 1rem; background: #fff; border-radius: 2px; position: relative;}*/
+      /*.mix:before {content: ''; display: inline-block; padding-top: 56.25%;}*/
+      /* Grid Breakpoints */
+      /* 2 Columns */
+      /*.mix {width: calc(50% - 1rem);}*/
+      /* 3 Columns */
+      /*@media screen and (min-width: 541px) { .mix {width: calc(100%/3 - 1rem);} }*/
+      /* 4 Columns */
+      /*@media screen and (min-width: 961px) { .mix, .gap {width: calc(100%/4 - 1rem);} }*/
+      /* 5 Columns */
+      /*@media screen and (min-width: 1281px) { .mix, .gap {width: calc(100%/5 - 1rem);} }*/
+
+      /* MixItUp Grid Inline Blocks */
+      .mix, .gap {display: inline-block; vertical-align: top;}
+      .mix {background: #fff; border-radius: 2px; margin-bottom: 1rem; position: relative;}
+      .mix:before {content: ''; display: inline-block; padding-top: 56.25%;}
+      /* 2 Column Grid Breakpoints */
+      .mix, .gap {width: calc(100%/2 - (((2 - 1) * 1rem) / 2));}
+      /* 3 Column Grid Breakpoints */
+      @media screen and (min-width: 541px) { .mix, .gap {width: calc(100%/3 - (((3 - 1) * 1rem) / 3));} }
+      /* 4 Column Grid Breakpoints */
+      @media screen and (min-width: 961px) { .mix, .gap {width: calc(100%/4 - (((4 - 1) * 1rem) / 4));} }
+      /* 5 Column Grid Breakpoints */
+      @media screen and (min-width: 1281px) { .mix, .gap {width: calc(100%/5 - (((5 - 1) * 1rem) / 5));} }
+
+      /* Hamburger overrides */
+      /*.c-hamburger {width: 56px; height: 56px; position: fixed; bottom: 0; right: 0; margin: 20px; z-index: 999;}
+      .c-hamburger span {top: 26px; left: 15px; right: 15px; height: 4px;}
+      .c-hamburger span::before {top: -8px;}
+      .c-hamburger span::after {bottom: -8px;}
+      .c-hamburger span::before, .c-hamburger span::after {height: 4px;}
+      .c-hamburger--htx, .c-hamburger:focus, .c-hamburger--htx.is-active {background-color: transparent;}*/
+
+      .fullScreenMenu {opacity: 0; visibility: hidden; text-align: center; position: fixed; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; z-index: 998; background-color: transparent; transition: all 0.2s; transition-delay: 0s;}
+      .overlay-active .fullScreenMenu {opacity: 1; visibility: visible; transition: all 0.1s; transition-delay: 0.2s;}
+      .side-nav {transform: translateY(-50%); position: relative; top: 50%; padding: 0; width: auto; height: auto; background-color: transparent; box-shadow: none;}
+      .side-nav li {padding: 2rem 0;}
+      .side-nav li>a {color: #FFF; font-size: 5rem;}
+      .side-nav li>a:hover, .side-nav li>a:focus, .side-nav li>a:active {background-color: transparent; color: #18FFFF;padding: 0;}
+      .side-nav li.active {background-color: transparent;}
+
+    </style>
+  </head>
+
+  <body>
+
+    <div class="navbar-fixed">
+      <nav class="blue">
+        <div class="nav-wrapper container">
+          <!-- floating menu overlay button -->
+          <div class="menuToggleArea">
+            <!-- hamburger collapse -->
+            <!-- <button class="c-hamburger c-hamburger--htx">
+              <span>toggle menu</span>
+            </button> -->
+            <!-- hamburger spin & fade -->
+            <i class="material-icons menu-icon">menu</i>
+            <i class="close-icon material-icons">close</i>
+            <div class="btn btn-floating blue darken-4"></div>
+            <div class="btn btn-floating blue darken-2"></div>
+            <nav class="fullScreenMenu">
+              <ul class="side-nav" id="mobile-demo">
+                <li><a class="work" href="#work">Work</a></li>
+                <li><a class="about" href="#about">About</a></li>
+                <li><a class="contact" href="#contact">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <a href="" class="brand-logo">Giancarlo Abadia</a>
+          <ul class="right menu hide-on-med-and-down">
+            <li class="active"><a class="work" href="#work">Work</a></li>
+            <li><a class="about" href="#about">About</a></li>
+            <li><a class="contact" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col s12 m4 l4 xl3 grid-test">Test</div>
+        <div class="col s12 m4 l4 xl3 grid-test">Test</div>
+        <div class="col s12 m4 l4 xl3 grid-test">Test</div>
+        <div class="col s12 m4 l4 xl3 grid-test">Test</div>
+      </div>
+    </div> -->
+
+    <section id="work">
+
+      <div class="fixed-action-btn click-to-toggle horizontal filter-area controls">
+        <a class="btn-floating btn-large pink pulse filter-btn waves-effect waves-light"><i class="large material-icons">filter_list</i></a>
+        <a class="btn-floating btn-large pink close-btn waves-effect waves-light"><i class="large material-icons">close</i></a>
+        <ul>
+          <li><button type="button" class="btn-floating blue control" data-filter="all"><i class="material-icons">apps</i></button></li>
+          <li><button type="button" class="btn-floating blue control" data-filter=".category-a"><i class="material-icons">devices</i></button></li>
+          <li><button type="button" class="btn-floating blue control" data-filter=".category-b"><i class="material-icons">import_contacts</i></button></li>
+          <li><button type="button" class="btn-floating blue control" data-filter=".category-c"><i class="material-icons">web</i></button></li>
+          <li><button type="button" class="btn-floating blue control" data-filter=".category-d"><i class="material-icons">brightness_auto</i></button></li>
+        </ul>
+      </div>
+
+      <div class="container" data-ref="mixitup-container">
+				<a href="imgs/pic1.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic1.jpg');"></a>
+				<a href="imgs/pic2.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic2.jpg');"></a>
+				<a href="imgs/pic3.jpg" class="image-link mix category-d" data-ref="mixitup-target" style="background-image: url('imgs/pic3.jpg');"></a>
+				<a href="imgs/pic4.jpg" class="image-link mix category-b" data-ref="mixitup-target" style="background-image: url('imgs/pic4.jpg');"></a>
+				<a href="imgs/pic5.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic5.jpg');"></a>
+				<a href="imgs/pic6.jpg" class="image-link mix category-c" data-ref="mixitup-target" style="background-image: url('imgs/pic6.jpg');"></a>
+				<a href="imgs/pic7.jpg" class="image-link mix category-b" data-ref="mixitup-target" style="background-image: url('imgs/pic7.jpg');"></a>
+				<a href="imgs/pic8.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic8.jpg');"></a>
+				<a href="imgs/pic9.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic9.jpg');"></a>
+				<a href="imgs/pic10.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic10.jpg');"></a>
+				<a href="imgs/pic11.jpg" class="image-link mix category-d" data-ref="mixitup-target" style="background-image: url('imgs/pic11.jpg');"></a>
+				<a href="imgs/pic12.jpg" class="image-link mix category-b" data-ref="mixitup-target" style="background-image: url('imgs/pic12.jpg');"></a>
+				<a href="imgs/pic13.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic13.jpg');"></a>
+				<a href="imgs/pic14.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic14.jpg');"></a>
+				<a href="imgs/pic15.jpg" class="image-link mix category-b" data-ref="mixitup-target" style="background-image: url('imgs/pic15.jpg');"></a>
+				<a href="imgs/pic16.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic16.jpg');"></a>
+				<a href="imgs/pic17.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic17.jpg');"></a>
+				<a href="imgs/pic18.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic18.jpg');"></a>
+				<a href="imgs/pic19.jpg" class="image-link mix category-d" data-ref="mixitup-target" style="background-image: url('imgs/pic19.jpg');"></a>
+				<a href="imgs/pic20.jpg" class="image-link mix category-b" data-ref="mixitup-target" style="background-image: url('imgs/pic20.jpg');"></a>
+				<a href="imgs/pic21.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic21.jpg');"></a>
+				<a href="imgs/pic22.jpg" class="image-link mix category-c" data-ref="mixitup-target" style="background-image: url('imgs/pic22.jpg');"></a>
+				<a href="imgs/pic23.jpg" class="image-link mix category-b" data-ref="mixitup-target" style="background-image: url('imgs/pic23.jpg');"></a>
+				<a href="imgs/pic24.jpg" class="image-link mix category-a" data-ref="mixitup-target" style="background-image: url('imgs/pic24.jpg');"></a>
+				<div class="gap"></div>
+				<div class="gap"></div>
+				<div class="gap"></div>
+			</div>
+		</section>
+
+		<section id="about" class="container" style="display:none;">
+			<div class="jumbotron row">
+			  <div class="col-sm-4 stats">
+					<div class="text-center">
+						<img class="circle" src="imgs/giancarlo.jpg">
+						<h3>Giancarlo Abadia</h3>
+						<h5>Graphic Designer</h5>
+					</div>
+
+					<h3>Skills</h3>
+					<ul class="list-group">
+						<li class="list-group-item">
+							<div class="row">
+								<div class="col-sm-6">Graphic Design</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+									    <span class="sr-only">90%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">Web Design</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+									    <span class="sr-only">70%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">Web Development</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									    <span class="sr-only">60%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">Photography</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+									    <span class="sr-only">50%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">Animation</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									    <span class="sr-only">60%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">Video editing</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									    <span class="sr-only">60%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">Illustration</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+									    <span class="sr-only">30%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h3>Interests</h3>
+					<ul class="list-group">
+						<li class="list-group-item">
+							<div class="row">
+								<div class="col-sm-6">Computers &amp; Technology</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+									    <span class="sr-only">90%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">Art &amp; Design</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+									    <span class="sr-only">80%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">Photography</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+									    <span class="sr-only">70%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">Animation</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+									    <span class="sr-only">90%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">Music</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+									    <span class="sr-only">80%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h3>Languages</h3>
+					<ul class="list-group">
+						<li class="list-group-item">
+							<div class="row">
+								<div class="col-sm-6">Spanish</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+									    <span class="sr-only">100%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">English</div>
+								<div class="col-sm-6">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+									    <span class="sr-only">85%</span>
+									  </div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-7 col-sm-offset-1">
+					<h3>Education</h3>
+					<ul class="list-group">
+					  <li class="list-group-item">
+							<span class="badge">2004-2010</span>
+							<h4 class="list-group-item-heading">Universidad de Panamá</h4>
+							<p class="list-group-item-text">Licentiate's Degree</p>
+						</li>
+					  <li class="list-group-item">
+							<span class="badge">1991-2003</span>
+							<h4 class="list-group-item-heading">Instituto Episcopal San Cristóbal</h4>
+							<p class="list-group-item-text">Bachelor’s Degree</p>
+						</li>
+					</ul>
+
+					<h3>Experience</h3>
+					<ul class="list-group">
+					  <li class="list-group-item">
+							<span class="badge">2011-2017</span>
+							<h4 class="list-group-item-heading">Cervecería Nacional</h4>
+							<p class="list-group-item-text">Graphic Designer</p>
+						</li>
+					  <li class="list-group-item">
+							<span class="badge">2011</span>
+							<h4 class="list-group-item-heading">lorenamoreno publicidad</h4>
+							<p class="list-group-item-text">Graphic Designer</p>
+						</li>
+						<li class="list-group-item">
+							<span class="badge">2009-2010</span>
+							<h4 class="list-group-item-heading">Cable &amp; Wireless Panamá, S.A.</h4>
+							<p class="list-group-item-text">Graphic Designer <span class="label label-info">Internship</span></p>
+						</li>
+						<li class="list-group-item">
+							<span class="badge">2008</span>
+							<h4 class="list-group-item-heading">Avetti Commerce</h4>
+							<p class="list-group-item-text">Web Developer</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- <section id="contact" class="container" style="display:none;">
+			<div class="jumbotron">
+				<div class="page-header">
+					<h1 class="fadeInUp animated">Contact</h1>
+					<p class="fadeInUp animated lead">For business inquiries or work requests, please use the form below to contact me.</p>
+				</div>
+				<form method="post" action="submit.php" class="fadeInUp animated form">
+					<div class="form-group"><input type="text" required name="Name" class="form-control" placeholder="Name"></div>
+					<div class="form-group"><input type="email" required name="Email" class="form-control" placeholder="Email"></div>
+					<div class="hide"><input name="url"></div>
+					<div class="form-group"><textarea type="text" required name="Message" class="form-control" rows="10" placeholder="Message" ></textarea></div>
+					<input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
+				</form>
+			</div>
+		</section> -->
+
+    <section id="contact" class="container" style="display:none;">
+      <h1 class="fadeInUp animated">Contact</h1>
+      <p class="fadeInUp animated lead">For business inquiries or work requests, please use the form below to contact me.</p>
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="name" type="text" class="validate">
+            <label for="name">Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="message" class="materialize-textarea"></textarea>
+            <label for="message">Message</label>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Import jQuery before materialize.js -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/modernizr-custom.js"></script>
+    <!-- <script type="text/javascript" src="js/hamburger.js"></script> -->
+    <script>
+      // $(".button-collapse").sideNav();
+
+      // For hamburger collapse animation
+      //  $('.c-hamburger').click( function(){
+      //    $('body').toggleClass('overlay-active');
+      //  });
+
+      // For hamburger spin & fade animation
+       $('.menu-icon').click( function(){
+         $('body').addClass('overlay-active');
+       });
+
+       $('.close-icon').click( function(){
+         $('body').removeClass('overlay-active');
+       });
+
+       $('.fullScreenMenu a').click( function(){
+         $('body').removeClass('overlay-active');
+       });
+
+      var first = "info";
+ 			var last = "gcjoel.com";
+
+      var containerEl = document.querySelector('[data-ref~="mixitup-container"]');
+
+      var mixer = mixitup(containerEl, {
+          selectors: {
+              target: '[data-ref~="mixitup-target"]'
+          }
+      });
+
+ 			$(".menu li").click(function()
+ 			{
+ 			  $(".menu li").removeClass("active");
+ 			  $(this).addClass("active");
+ 			});
+
+ 			$("nav li").click(function()
+ 			{
+ 				$("nav li").removeClass("active");
+ 				$(this).addClass("active");
+ 			});
+
+ 			$(".work").click(function(){
+ 				$("#about").fadeOut("slow");
+ 				$("#contact").fadeOut("slow");
+ 				$("#work").delay(600).fadeIn("slow");
+ 			});
+
+ 			$(".about").click(function(){
+ 				$("#work").fadeOut("slow");
+ 				$("#contact").fadeOut("slow");
+ 				$("#about").delay(600).fadeIn("slow");
+ 			});
+
+ 			$(".contact").click(function(){
+ 				$("#work").fadeOut("slow");
+ 				$("#about").fadeOut("slow");
+ 				$("#contact").delay(600).fadeIn("slow");
+ 			});
+
+      $.fn.extend({
+          animateCss: function (animationName) {
+              var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+              this.addClass('animated ' + animationName).one(animationEnd, function() {
+                  $(this).removeClass('animated ' + animationName);
+              });
+          }
+      });
+
+      $('.filter-btn').animateCss('bounceInRight');
+
+ 			var children = $(".mix");
+ 	    var index = 0;
+
+      $('.mix').addClass('hide');
+
+ 			setTimeout(function () {
+ 				function addClassToNextChild() {
+ 					if (index == children.length) return;
+ 					children.eq(index++).removeClass("hide").addClass("fadeInUp animated").delay(1000).queue(function(){
+ 						$(this).removeClass('fadeInUp animated');
+ 						$(this).dequeue();
+ 					});
+ 					window.setTimeout(addClassToNextChild, 200);
+ 				}
+ 				addClassToNextChild()
+ 			}, 800);
+
+      function resize() {
+        if ($(window).height() < 400) {
+          $('.filter-area').addClass('horizontal');
+        }
+        else {$('.filter-area').removeClass('horizontal');}
+      }
+
+      $(document).ready( function() {
+        $(window).resize(resize);
+        resize();
+      });
+    </script>
+  </body>
+</html>
