@@ -296,6 +296,14 @@
     @media only screen and (min-width: 414px) {
     }
     @media only screen and (min-width: 480px) {
+      .logo {background-size: 70px; background-position: 96% top;}
+      .menu {text-align: left; /*position: absolute; bottom: 0; top: 50%; right: 0; left: 0; transform: translate(0, -50%);*/}
+      .menu ul {}
+      .menu a {padding: 2px 30px; font-size: 8vw; line-height: 6vw;}
+      .menu span {padding: 0 20px 10px 0;}
+      .menu span, .menu .text {display: inline; vertical-align: middle;}
+      .topmenu a {margin: 10px; font-size: 18px;}
+      .lnr-envelope {margin:0;}
     }
     @media only screen and (min-width: 568px) {
       /*body.contact .topbar {background: none;}*/
@@ -315,20 +323,6 @@
     }
     @media only screen and (min-width: 800px) {
       #contact .container {width: 55%}
-      .logo {background-size: 70px; background-position: 96% top;}
-      .menu {text-align: left; /*position: absolute; bottom: 0; top: 50%; right: 0; left: 0; transform: translate(0, -50%);*/}
-      .menu ul {}
-      .menu a {padding: 2px 30px; font-size: 8vw; line-height: 6vw;}
-      .menu span {padding: 0 20px 10px 0;}
-      .menu span, .menu .text {display: inline; vertical-align: middle;}
-      .topmenu a {margin: 10px; font-size: 18px;}
-      .lnr-envelope {margin:0;}
-    }
-    @media only screen and (min-width: 960px) {
-      #contact .container {width: 50%}
-    }
-    @media only screen and (min-width: 1024px) {
-      #contact .container {width: 45%}
       .logo {position: absolute; top: 20px; left: 20px; width: 100px; background-size: 90px; background-position: center;}
       main.container .left {position: absolute; top: 0; bottom: 0; left: 0; width: 50%; height: 100%; box-shadow: -40px 0px 100px #000;}
       .right {display: block;}
@@ -336,7 +330,13 @@
       .menu ul {/*position: absolute; top: auto; left: auto; bottom: 0; width: 100%;*/}
       .menu a {padding: 8px 50px 18px 0;}
       .menu span {display: none;}
-      img.mfp-img, .image-overlay img {max-width: 800px;}	    
+      img.mfp-img, .image-overlay img {max-width: 800px;}
+    }
+    @media only screen and (min-width: 960px) {
+      #contact .container {width: 50%}
+    }
+    @media only screen and (min-width: 1024px) {
+      #contact .container {width: 45%}
     }
     @media only screen and (min-width: 1366px) {
       #contact .container {width: 40%}
