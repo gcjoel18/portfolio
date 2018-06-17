@@ -127,7 +127,7 @@
 
     #about .profile {display: flex; align-items: center; justify-content: center; flex-wrap: wrap;}
     /*#about .profile h3 {font-size: 5vh;}*/
-    #about .profile img {max-width: 200px;}
+    #about .profile img {max-width: 75%;}
     #about .section {padding-top: 0;}
     #about .collection h1, #about .collection h2, #about .collection h3, #about .collection h4, #about .collection h5, #about .collection h6 {font-weight: 400;}
     #about .collection .row {margin-bottom: 0;}
@@ -289,78 +289,23 @@
     input[type=text]:not(.browser-default):focus:not([readonly])+label,  input[type=email]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {color: #000;}
 
 
-    @media only screen and (min-width: 320px) {
-    }
-    @media only screen and (min-width: 375px) {
-    }
-    @media only screen and (min-width: 414px) {
-    }
     @media only screen and (min-width: 480px) {
-      .logo {background-size: 70px; background-position: 96% top;}
-      .menu {text-align: left; /*position: absolute; bottom: 0; top: 50%; right: 0; left: 0; transform: translate(0, -50%);*/}
-      .menu ul {}
-      .menu a {padding: 2px 30px; font-size: 8vw; line-height: 6vw;}
-      .menu span {padding: 0 20px 10px 0;}
-      .menu span, .menu .text {display: inline; vertical-align: middle;}
-      .topmenu a {margin: 10px; font-size: 18px;}
-      .lnr-envelope {margin:0;}
+    .menu a {padding: 5px 30px; font-size: 8vw; line-height: 6vw;}
+    .menu span {padding: 0 20px 10px 0;}
+    .menu span, .menu .text {display: inline; vertical-align: middle;}
+    .topmenu a {margin: 10px; font-size: 18px;}
+    .lnr-envelope {margin:0;}
+    img.mfp-img, .image-overlay img {max-width: 800px;}
     }
-    @media only screen and (min-width: 568px) {
-      /*body.contact .topbar {background: none;}*/
-      #contact .container {width: 75%; /*margin-top: -40px;*/}
-    }
-    @media only screen and (min-width: 601px) {
-      #about .profile img {max-width: 100%;}
-    }
-    @media only screen and (min-width: 640px) {
-      #contact .container {width: 70%;}
-    }
-    @media only screen and (min-width: 667px) {
-      #contact .container {width: 65%;}
-    }
-    @media only screen and (min-width: 736px) {
-      #contact .container {width: 60%;}
-    }
-    @media only screen and (min-width: 800px) {
-      #contact .container {width: 55%}
+
+    @media only screen and (min-width: 1280px) {
       .logo {position: absolute; top: 20px; left: 20px; width: 100px; background-size: 90px; background-position: center;}
       main.container .left {position: absolute; top: 0; bottom: 0; left: 0; width: 50%; height: 100%; box-shadow: -40px 0px 100px #000;}
       .right {display: block;}
       .menu {text-align: right;position: absolute; right: 0; bottom: 60px; width: 100%;}
-      .menu ul {/*position: absolute; top: auto; left: auto; bottom: 0; width: 100%;*/}
       .menu a {padding: 8px 50px 18px 0;}
       .menu span {display: none;}
-      img.mfp-img, .image-overlay img {max-width: 800px;}
-    }
-    @media only screen and (min-width: 960px) {
-      #contact .container {width: 50%}
-    }
-    @media only screen and (min-width: 1024px) {
-      #contact .container {width: 45%}
-    }
-    @media only screen and (min-width: 1366px) {
-      #contact .container {width: 40%}
-    }
-    @media only screen and (min-width: 2000px) {
-      .menu a {font-size: 6vw; line-height: 5vw;}
-    }
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-      .logo {width: 200px; height: 200px; background-size: 150px; background-position: center; margin: auto;}
-      .menu {/*position: absolute; left: 50%; transform: translate(-50%, -40%);right: auto;*/}
-      .menu a {font-size: 12vw; padding: 2vh 14vw;}
-      .menu span {font-size: 18vw; padding-right: 30px;}
-      #contact .container {width: 65%}
-      #contact {display: flex; align-items: center; justify-content: center; height: 100%;}
-    }
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-      main.container .left {width: 100%;}
-      .logo {width: 100%; height: 30%; top: auto; left: auto; background-position: center; background-size: 150px;}
-      .menu {text-align: left; /*width: 100%; left: 50%; bottom: 0; transform: translate(-50%, 0);bottom:60px;*/}
-      .menu a {font-size: 10vw; padding: 2vh 22vw;}
-      .menu span, .menu .text {display: inline;}
-      .menu span {font-size: 8rem;}
-      #contact .container {width: 50%}
-      #contact {display: flex; align-items: center; justify-content: center; height: 100%;}
+      #contact .container {width: 55%}
     }
 
   </style>
