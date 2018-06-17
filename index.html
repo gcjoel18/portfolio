@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/spinkit.css">
   <link rel="stylesheet" href="css/animate.min.css" />
   <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/hover-min.css" media="all">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:900">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -70,19 +71,20 @@
     .menu {text-align: center; background-color: transparent; height: auto; box-shadow: none; color: #000;}
     .menu li {float: none;}
     .menu a {display: block; color:#000; text-decoration: none; text-transform: lowercase; font-size: 10vw; line-height: inherit; padding: 1vh 0; transition: none;}
-    .menu a:hover {background-color: transparent; color: #FFB300; animation: animatedBackground 0.3s ease 0s 1 normal both, textColorChange 0s linear 0s 1 normal both;}
+    .menu a:before {background: #000;}
+    .menu a:hover {background-color: transparent; color: #FFB300; /*animation: animatedBackground 0.3s ease 0s 1 normal both, textColorChange 0s linear 0s 1 normal both;*/}
     .menu span {display: block;font-size: 4rem;}
     .menu span.lnr {padding-left: 5px;}
     .lnr-envelope {margin-top: -15px;}
 
-    @keyframes animatedBackground {
-      0% {background-image: linear-gradient(to right, transparent 0%, transparent 100%); background-repeat: no-repeat; background-position: 1000px 0;}
+    /* @keyframes animatedBackground {
+      0% {background-image: linear-gradient(to right, transparent 0%, transparent 100%); background-repeat: no-repeat; background-position: 100% 0;}
       100% {background-image: linear-gradient(to right, #000 0%, #000 100%); background-repeat: no-repeat; background-position: 0 0;}
     }
     @keyframes textColorChange {
       0% {color: #000;}
       100% {color: #FFB300;}
-    }
+    } */
 
     .topbar, .topbar .title {display: none;}
     body.work .topbar .title,
@@ -101,8 +103,11 @@
     #work, #about, #contact {transition: none;}
     #work {padding-bottom: 90px;}
     #work .container {padding-top: 70px;}
-    #work .container a {background-size: cover;}
-    #work .container > * {transition: none;}
+    /* #work .container > * {transition: none;} */
+    #work .container a {opacity: 0; transition: opacity 300ms; transform: scale(1.2); background-size: cover;}
+    #work .container a.show:hover {transform: scale(1.05); transition: transform 100ms;}
+    #work .container a.show {opacity: 1; transform: scale(1);}
+	  
     #about .container, #contact .container {padding-top: 60px;}
 
     #contact p {font-weight: 300;}
@@ -367,9 +372,9 @@
       <div class="logo">Giancarlo Abadia</div>
       <nav class="menu">
         <ul>
-          <li><a href="#work" data-ref="work" class="open work"><span class="lnr lnr-book"></span><div class="text">Work.</div></a></li>
-          <li><a href="#about" data-ref="about" class="open about"><span class="lnr lnr-user"></span><div class="text">About.</div></a></li>
-          <li><a href="#contact" data-ref="contact" class="open contact"><span class="lnr lnr-envelope"></span><div class="text">Contact.</div></a></li>
+          <li><a href="#work" data-ref="work" class="open work hvr-sweep-to-left"><span class="lnr lnr-book"></span><div class="text">Work.</div></a></li>
+          <li><a href="#about" data-ref="about" class="open about hvr-sweep-to-left"><span class="lnr lnr-user"></span><div class="text">About.</div></a></li>
+          <li><a href="#contact" data-ref="contact" class="open contact hvr-sweep-to-left"><span class="lnr lnr-envelope"></span><div class="text">Contact.</div></a></li>
         </ul>
       </nav>
     </div>
@@ -708,7 +713,7 @@
     </div>
   </div>
 
-	<script src="js/classie.js"></script>
+  <script src="js/classie.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
@@ -753,7 +758,7 @@
 
   <script type="text/javascript">
 
-    new WOW().init();
+    // new WOW().init();
 
     // Big icon sliding right from main menu hover
     $('.menu a').hover(function() {
@@ -816,29 +821,25 @@
       $(this).addClass("active");
     });
 
-    // Work section grid boxes "fadeInUp" effect activation
-    var children = $(".mix");
-    var index = 0;
+    $('.topmenu a[data-ref != "work"], .back-button').click( function() {
+      setTimeout(function() {
+        $(".container a").removeClass('show');
+      }, 2000);
+    });
 
-    $(children).addClass('hide');
-
-    var checkPage = function(){
-      if($("body").hasClass("work")) {
-        setTimeout(function () {
-          function addClassToNextChild() {
-            if (index == children.length) return;
-            children.eq(index++).removeClass("hide").addClass("fadeInUp animated").delay(2000).queue(function(){
-              $(this).removeClass('fadeInUp animated');
-              $(this).dequeue();
-            });
-            window.setTimeout(addClassToNextChild, 1000);
-          }
-          addClassToNextChild()
-        }, 1000);
-      }
-    }
-
-    var intrvl = setInterval( checkPage, 300 );
+    // Work section grid boxes appear animation
+    var thumbs = $('.container a');
+    $('a[data-ref="work"]').click( function() {
+      setTimeout(function() {
+        for (var i = 0; i < thumbs.length; i++) {
+          (function(index) {
+            setTimeout(function() {
+              thumbs.eq(index).addClass('show');
+            }, 50 * index);
+          })(i)
+        }
+      }, 800);
+    });
 
     $(document).ready(function() {
 
@@ -881,6 +882,29 @@
 
     });
 
+    // Work section grid boxes "fadeInUp" effect activation
+    // var children = $(".mix");
+    // var index = 0;
+    //
+    // $(children).addClass('hide');
+    //
+    // var checkPage = function(){
+    //   if($("body").hasClass("work")) {
+    //     setTimeout(function () {
+    //       function addClassToNextChild() {
+    //         if (index == children.length) return;
+    //         children.eq(index++).removeClass("hide").addClass("fadeInUp animated").delay(2000).queue(function(){
+    //           $(this).removeClass('fadeInUp animated');
+    //           $(this).dequeue();
+    //         });
+    //         window.setTimeout(addClassToNextChild, 1000);
+    //       }
+    //       addClassToNextChild()
+    //     }, 1000);
+    //   }
+    // }
+
+    // var intrvl = setInterval( checkPage, 300 );
 
     // $(".menu .open.work").click( function() {
     //   if ($("body").hasClass("work")) {
@@ -926,7 +950,6 @@
     // var pageName = $('div:visible', '.wrapper').attr('id');
     //   $('.title').text(pageName);
     // }
-
 
   </script>
 
