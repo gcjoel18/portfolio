@@ -134,15 +134,15 @@
     #about .badge {margin: 0; height: auto;}
     #about .chip {font-size: 12px; font-weight: normal; margin: 5px 0 0 0; padding: 0 8px; height: 20px; line-height: 20px;}
 
-    body.work .filterbar {transform: translateY(0); transition: all 0.4s 0.5s; /*box-shadow: 0 1px 3px #000;*/}
+    body.work .filterbar {transform: translateY(0); transition: all 0.4s 0.5s; box-shadow: 0 5px 15px rgba(0,0,0,1);}
     .filterbar {width: 100%; bottom: 0; left: 0; right: 0; position: fixed; z-index: 1041; transform: translateY(100%); transition: all 0.2s 0s; opacity: 0.98;}
     .filterbar ul {margin: 6px auto; display: flex; align-items: center; justify-content: space-around; max-width: 300px;}
     .filterbar li {opacity: 0.1; cursor: pointer; width: 100%;}
     .filterbar li.active, .filterbar li:hover {opacity: 1;}
     .filterbar a {background: none; border: 0; width: 100%;}
     .filterbar span {font-family: 'Roboto', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 8px; letter-spacing: 1px;}
-    .filterbar li.active a, .filterbar li.active span {color: #FFF;}
-    .filterbar a, .filterbar span {display: grid; padding: 1px; margin: auto; color: #FFF; transition: none;}
+    .filterbar li.active a, .filterbar li.active span {color: #000;}
+    .filterbar a, .filterbar span {display: grid; padding: 1px; margin: auto; color: #000; transition: none;}
     .filterbar i {font-size: 30px;}
     /*.filterbar i:hover {transform: scale(1.1); animation: scale 0.1s;}*/
 
@@ -345,7 +345,7 @@
         <!-- <span class="title"></span> -->
         <div class="logo"></div>
       </div>
-      <div class="filterbar center-align grey darken-4">
+      <div class="filterbar center-align amber darken-1">
         <ul>
           <li class="active"><a data-filter="all"><i class="material-icons">apps</i></a><span>All</span></li>
           <li><a data-filter=".category-a"><i class="material-icons">devices</i></a><span>Digital</span></li>
