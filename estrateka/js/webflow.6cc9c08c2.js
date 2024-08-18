@@ -1109,6 +1109,7 @@ __p+='`), X
                 n = document,
                 r = e("html"),
                 i = e("body"),
+                o = "",
                 a = window.location,
                 s = /PhantomJS/i.test(navigator.userAgent),
                 u = "fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange",
@@ -1122,6 +1123,12 @@ __p+='`), X
             function v() {
                 var E = n.fullScreen || n.mozFullScreen || n.webkitIsFullScreen || n.msFullscreenElement || !!n.webkitFullscreenElement;
                 e(l).attr("style", E ? "display: none !important;" : "")
+            }
+
+            function p() {
+                var E = e(),
+                    _ = e();
+                return E.append(b, _), E[0]
             }
 
             function d() {
