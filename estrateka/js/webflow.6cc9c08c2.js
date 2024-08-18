@@ -1109,7 +1109,6 @@ __p+='`), X
                 n = document,
                 r = e("html"),
                 i = e("body"),
-                o = ".w-webflow-badge",
                 a = window.location,
                 s = /PhantomJS/i.test(navigator.userAgent),
                 u = "fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange",
@@ -1123,16 +1122,6 @@ __p+='`), X
             function v() {
                 var E = n.fullScreen || n.mozFullScreen || n.webkitIsFullScreen || n.msFullscreenElement || !!n.webkitFullscreenElement;
                 e(l).attr("style", E ? "display: none !important;" : "")
-            }
-
-            function p() {
-                var E = e('<a class="w-webflow-badge"></a>').attr("href", "https://webflow.com?utm_campaign=brandjs"),
-                    b = e("<img>").attr("src", "https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-icon-d2.89e12c322e.svg").attr("alt", "").css({
-                        marginRight: "4px",
-                        width: "26px"
-                    }),
-                    _ = e("<img>").attr("src", "https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-text-d2.c82cec3b78.svg").attr("alt", "Made in Webflow");
-                return E.append(b, _), E[0]
             }
 
             function d() {
