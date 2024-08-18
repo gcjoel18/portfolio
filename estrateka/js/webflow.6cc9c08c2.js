@@ -1101,6 +1101,53 @@ __p+='`), X
         va();
         ya.exports = window.Webflow = de
     });
+    var Ia = f((hF, _a) => {
+        "use strict";
+        var ma = Fe();
+        ma.define("brand", _a.exports = function (e) {
+            var t = {},
+                n = document,
+                r = e("html"),
+                i = e("body"),
+                o = ".w-webflow-badge",
+                a = window.location,
+                s = /PhantomJS/i.test(navigator.userAgent),
+                u = "fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange",
+                l;
+            t.ready = function () {
+                var E = r.attr("data-wf-status"),
+                    b = r.attr("data-wf-domain") || "";
+                /\.webflow\.io$/i.test(b) && a.hostname !== b && (E = !0), E && !s && (l = l || p(), d(), setTimeout(d, 500), e(n).off(u, v).on(u, v))
+            };
+
+            function v() {
+                var E = n.fullScreen || n.mozFullScreen || n.webkitIsFullScreen || n.msFullscreenElement || !!n.webkitFullscreenElement;
+                e(l).attr("style", E ? "display: none !important;" : "")
+            }
+
+            function p() {
+                var E = e('<a class="w-webflow-badge"></a>').attr("href", "https://webflow.com?utm_campaign=brandjs"),
+                    b = e("<img>").attr("src", "https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-icon-d2.89e12c322e.svg").attr("alt", "").css({
+                        marginRight: "4px",
+                        width: "26px"
+                    }),
+                    _ = e("<img>").attr("src", "https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-text-d2.c82cec3b78.svg").attr("alt", "Made in Webflow");
+                return E.append(b, _), E[0]
+            }
+
+            function d() {
+                var E = i.children(o),
+                    b = E.length && E.get(0) === l,
+                    _ = ma.env("editor");
+                if (b) {
+                    _ && E.remove();
+                    return
+                }
+                E.length && E.remove(), _ || i.append(l)
+            }
+            return t
+        })
+    });
     var ba = f((EF, Ta) => {
         "use strict";
         var $r = Fe();
