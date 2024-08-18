@@ -1109,7 +1109,7 @@ __p+='`), X
                 n = document,
                 r = e("html"),
                 i = e("body"),
-                o = "",
+                o = ".w-webflow-badge",
                 a = window.location,
                 s = /PhantomJS/i.test(navigator.userAgent),
                 u = "fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange",
@@ -1127,6 +1127,10 @@ __p+='`), X
 
             function p() {
                 var E = e(),
+                    b = e().css({
+                        marginRight: "4px",
+                        width: "26px"
+                    }),
                     _ = e();
                 return E.append(b, _), E[0]
             }
