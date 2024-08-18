@@ -1101,6 +1101,104 @@ __p+='`), X
         va();
         ya.exports = window.Webflow = de
     });
+    var ba = f((EF, Ta) => {
+        "use strict";
+        var $r = Fe();
+        $r.define("edit", Ta.exports = function (e, t, n) {
+            if (n = n || {}, ($r.env("test") || $r.env("frame")) && !n.fixture && !JE()) return {
+                exit: 1
+            };
+            var r = {},
+                i = e(window),
+                o = e(document.documentElement),
+                a = document.location,
+                s = "hashchange",
+                u, l = n.load || d,
+                v = !1;
+            try {
+                v = localStorage && localStorage.getItem && localStorage.getItem("WebflowEditor")
+            } catch {}
+            v ? l() : a.search ? (/[?&](edit)(?:[=&?]|$)/.test(a.search) || /\?edit$/.test(a.href)) && l() : i.on(s, p).triggerHandler(s);
+
+            function p() {
+                u || /\?edit/.test(a.hash) && l()
+            }
+
+            function d() {
+                u = !0, window.WebflowEditor = !0, i.off(s, p), R(function (C) {
+                    e.ajax({
+                        url: m("https://editor-api.webflow.com/api/editor/view"),
+                        data: {
+                            siteId: o.attr("data-wf-site")
+                        },
+                        xhrFields: {
+                            withCredentials: !0
+                        },
+                        dataType: "json",
+                        crossDomain: !0,
+                        success: E(C)
+                    })
+                })
+            }
+
+            function E(C) {
+                return function (N) {
+                    if (!N) {
+                        console.error("Could not load editor data");
+                        return
+                    }
+                    N.thirdPartyCookiesSupported = C, b(w(N.scriptPath), function () {
+                        window.WebflowEditor(N)
+                    })
+                }
+            }
+
+            function b(C, N) {
+                e.ajax({
+                    type: "GET",
+                    url: C,
+                    dataType: "script",
+                    cache: !0
+                }).then(N, _)
+            }
+
+            function _(C, N, P) {
+                throw console.error("Could not load editor script: " + N), P
+            }
+
+            function w(C) {
+                return C.indexOf("//") >= 0 ? C : m("https://editor-api.webflow.com" + C)
+            }
+
+            function m(C) {
+                return C.replace(/([^:])\/\//g, "$1/")
+            }
+
+            function R(C) {
+                var N = window.document.createElement("iframe");
+                N.src = "https://webflow.com/site/third-party-cookie-check.html", N.style.display = "none", N.sandbox = "allow-scripts allow-same-origin";
+                var P = function (H) {
+                    H.data === "WF_third_party_cookies_unsupported" ? (O(N, P), C(!1)) : H.data === "WF_third_party_cookies_supported" && (O(N, P), C(!0))
+                };
+                N.onerror = function () {
+                    O(N, P), C(!1)
+                }, window.addEventListener("message", P, !1), window.document.body.appendChild(N)
+            }
+
+            function O(C, N) {
+                window.removeEventListener("message", N, !1), C.remove()
+            }
+            return r
+        });
+
+        function JE() {
+            try {
+                return window.top.__Cypress__
+            } catch {
+                return !1
+            }
+        }
+    });
     var wa = f((vF, Aa) => {
         "use strict";
         var ev = Fe();
