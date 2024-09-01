@@ -2189,7 +2189,7 @@ h1 {
 .body {
   color: #fff;
   background-color: #370c7a;
-  background-image: url("/img/backgrounds/codioful-formerly-gradienta-4VgbJyqALXM-unsplash.jpg");
+  background-image: url("../img/backgrounds/codioful-formerly-gradienta-4VgbJyqALXM-unsplash.jpg");
   background-position: 100% 0;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -2307,7 +2307,7 @@ h1 {
   z-index: -1;
   opacity: .25;
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/pexels-thirdman-5256819.jpg");
+  background-image: url("../img/photos/pexels-thirdman-5256819.jpg");
   background-position: 50% 0;
   background-size: cover;
   position: absolute;
@@ -2318,7 +2318,7 @@ h1 {
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   opacity: .1;
-  background-image: url("/img/backgrounds/Waves.svg");
+  background-image: url("../img/backgrounds/Waves.svg");
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2390,7 +2390,7 @@ h1 {
 .distinciones {
   grid-column-gap: 30px;
   grid-row-gap: 30px;
-  background-image: url("/img/backgrounds/Que-nos-distingue-Desktop.jpg");
+  background-image: url("../img/backgrounds/Que-nos-distingue-Desktop.jpg");
   background-position: 50% 0;
   background-size: cover;
   flex-flow: column;
@@ -2517,56 +2517,56 @@ h1 {
 
 .sector-photo-box.sector-photo-1 {
   opacity: .4;
-  background-image: url("/img/photos/pexels-pixabay-267394.jpg");
+  background-image: url("../img/photos/pexels-pixabay-267394.jpg");
   background-position: 50%;
   background-size: cover;
 }
 
 .sector-photo-box.sector-photo-2 {
   opacity: .4;
-  background-image: url("/img/photos/franki-chamaki-wkvKZR4e2OI-unsplash.jpg");
+  background-image: url("../img/photos/franki-chamaki-wkvKZR4e2OI-unsplash.jpg");
   background-position: 50%;
   background-size: cover;
 }
 
 .sector-photo-box.sector-photo-3 {
   opacity: .4;
-  background-image: url("/img/photos/pexels-thirdman-7651922.jpg");
+  background-image: url("../img/photos/pexels-thirdman-7651922.jpg");
   background-position: 50%;
   background-size: cover;
 }
 
 .sector-photo-box.sector-photo-4 {
   opacity: .4;
-  background-image: url("/img/photos/pexels-adrian-dorobantu-989175-2300334.jpg");
+  background-image: url("../img/photos/pexels-adrian-dorobantu-989175-2300334.jpg");
   background-position: 50%;
   background-size: cover;
 }
 
 .sector-photo-box.sector-photo-5 {
   opacity: .4;
-  background-image: url("/img/photos/yogendra-singh-Tf1FO5R2nnU-unsplash.jpg");
+  background-image: url("../img/photos/yogendra-singh-Tf1FO5R2nnU-unsplash.jpg");
   background-position: 50% 25%;
   background-size: cover;
 }
 
 .sector-photo-box.sector-photo-6 {
   opacity: .4;
-  background-image: url("/img/photos/pexels-bemistermister-380782.jpg");
+  background-image: url("../img/photos/pexels-bemistermister-380782.jpg");
   background-position: 50%;
   background-size: cover;
 }
 
 .sector-photo-box.sector-photo-7 {
   opacity: .4;
-  background-image: url("/img/photos/pexels-asadphoto-1266831.jpg");
+  background-image: url("../img/photos/pexels-asadphoto-1266831.jpg");
   background-position: 50%;
   background-size: cover;
 }
 
 .sector-photo-box.sector-photo-8 {
   opacity: .4;
-  background-image: url("/img/photos/pexels-mikebirdy-120049.jpg");
+  background-image: url("../img/photos/pexels-mikebirdy-120049.jpg");
   background-position: 50%;
   background-size: cover;
 }
@@ -2603,7 +2603,7 @@ h1 {
   -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
   clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
   mix-blend-mode: normal;
-  background-image: url("/img/backgrounds/codioful-formerly-gradienta-4VgbJyqALXM-unsplash.jpg");
+  background-image: url("../img/backgrounds/codioful-formerly-gradienta-4VgbJyqALXM-unsplash.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2800,7 +2800,7 @@ h1 {
 
 .servicios-image1 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/pexels-fotios-photos-1438190.jpg");
+  background-image: url("../img/photos/pexels-fotios-photos-1438190.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2811,7 +2811,7 @@ h1 {
 
 .servicios-image2 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/jason-goodman-Oalh2MojUuk-unsplash.jpg");
+  background-image: url("../img/photos/jason-goodman-Oalh2MojUuk-unsplash.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2822,7 +2822,7 @@ h1 {
 
 .servicios-image5 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/pexels-fauxels-3184465.jpg");
+  background-image: url("../img/photos/pexels-fauxels-3184465.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2833,7 +2833,7 @@ h1 {
 
 .servicios-image4 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/brands-people-Ax8IA8GAjVg-unsplash.jpg");
+  background-image: url("../img/photos/brands-people-Ax8IA8GAjVg-unsplash.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2844,7 +2844,7 @@ h1 {
 
 .servicios-image3 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/pexels-george-milton-6954180.jpg");
+  background-image: url("../img/photos/pexels-george-milton-6954180.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2868,7 +2868,7 @@ h1 {
 
 .servicios-image6 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/obi-pixel8propix-pe3K89nlvjY-unsplash.jpg");
+  background-image: url("../img/photos/obi-pixel8propix-pe3K89nlvjY-unsplash.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2879,7 +2879,7 @@ h1 {
 
 .servicios-image7 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/pexels-plann-2999237-4549414.jpg");
+  background-image: url("../img/photos/pexels-plann-2999237-4549414.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2890,7 +2890,7 @@ h1 {
 
 .servicios-image8 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/pexels-goumbik-590037.jpg");
+  background-image: url("../img/photos/pexels-goumbik-590037.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2901,7 +2901,7 @@ h1 {
 
 .servicios-image9 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/leah-hetteberg-IoJFOvbqF3c-unsplash.jpg");
+  background-image: url("../img/photos/leah-hetteberg-IoJFOvbqF3c-unsplash.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2912,7 +2912,7 @@ h1 {
 
 .servicios-image10 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/pexels-eva-bronzini-7661590.jpg");
+  background-image: url("../img/photos/pexels-eva-bronzini-7661590.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2923,7 +2923,7 @@ h1 {
 
 .servicios-image11 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/pexels-thibault-trillet-44912-167478.jpg");
+  background-image: url("../img/photos/pexels-thibault-trillet-44912-167478.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2934,7 +2934,7 @@ h1 {
 
 .servicios-image12 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/dlxmedia-hu-rT355caT0wg-unsplash.jpg");
+  background-image: url("../img/photos/dlxmedia-hu-rT355caT0wg-unsplash.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2945,7 +2945,7 @@ h1 {
 
 .servicios-image13 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/pexels-evonics-1058276.jpg");
+  background-image: url("../img/photos/pexels-evonics-1058276.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2956,7 +2956,7 @@ h1 {
 
 .servicios-image14 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/team-nocoloco-z41dNJVqSxo-unsplash.jpg");
+  background-image: url("../img/photos/team-nocoloco-z41dNJVqSxo-unsplash.jpg");
   background-position: 0%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2967,7 +2967,7 @@ h1 {
 
 .servicios-image15 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/pexels-fauxels-3184292.jpg");
+  background-image: url("../img/photos/pexels-fauxels-3184292.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2978,7 +2978,7 @@ h1 {
 
 .servicios-image16 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/pexels-sarah-blocksidge-69426152-13628541.jpg");
+  background-image: url("../img/photos/pexels-sarah-blocksidge-69426152-13628541.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2989,7 +2989,7 @@ h1 {
 
 .servicios-image17 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/pexels-olly-3767404.jpg");
+  background-image: url("../img/photos/pexels-olly-3767404.jpg");
   background-position: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3000,7 +3000,7 @@ h1 {
 
 .servicios-image18 {
   mix-blend-mode: luminosity;
-  background-image: url("/img/photos/stephen-phillips-hostreviews-co-uk-shr_Xn8S8QU-unsplash.jpg");
+  background-image: url("../img/photos/stephen-phillips-hostreviews-co-uk-shr_Xn8S8QU-unsplash.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3141,7 +3141,7 @@ h1 {
 .map {
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-  background-image: url("/img/Mapa-Desktop.svg");
+  background-image: url("../img/Mapa-Desktop.svg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -3296,7 +3296,7 @@ h1 {
   }
 
   .distinciones {
-    background-image: url("/img/backgrounds/Que-nos-distingue-Mobile.jpg");
+    background-image: url("../img/backgrounds/Que-nos-distingue-Mobile.jpg");
     background-size: cover;
     padding-top: 0;
     padding-bottom: 0;
@@ -3404,7 +3404,7 @@ h1 {
   }
 
   .map {
-    background-image: url("/img/Mapa-Mobile.svg");
+    background-image: url("../img/Mapa-Mobile.svg");
     background-position: 0%;
     width: 2000px;
     margin-left: 60px;
