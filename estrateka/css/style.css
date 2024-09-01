@@ -2571,7 +2571,7 @@ h1 {
   background-size: cover;
 }
 
-.scroll-to-top {
+.scroll-to-top-link {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   opacity: .7;
@@ -2586,14 +2586,10 @@ h1 {
   inset: auto 30px 30px auto;
 }
 
-.image-4 {
+.scroll-to-top-img {
   width: 70px;
   position: absolute;
   top: 2px;
-}
-
-.pagetopanchor {
-  position: absolute;
 }
 
 .presencia {
