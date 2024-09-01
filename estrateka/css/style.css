@@ -2592,6 +2592,10 @@ h1 {
   top: 2px;
 }
 
+.pagetopanchor {
+  position: absolute;
+}
+
 .presencia {
   z-index: 0;
   opacity: 1;
