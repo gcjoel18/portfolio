@@ -136,7 +136,8 @@
 	#about .chip {font-size: 12px; font-weight: normal; margin: 5px 0 0 0; padding: 0 8px; height: 20px; line-height: 20px;}
 	
 	.filterbar {position: sticky; top: 30px; left: 0; right: 0; z-index: 1041; background: #F5F5F5; padding: 20px 0; opacity: 0.98;}
-	.filterbar a {display: none; background: none; border: 0; width: 100%;}
+	.filterbar a {background: none; border: 0; width: 100%;}
+	.filterbar i {display:none;}
 	.filterbar span {text-transform: uppercase; font-size: 12px; font-weight: 700;}
 	.filterbar li {border: 1px solid #CCC; border-radius: 5px; margin-bottom: 10px; padding: 4px;}
 	.filterbar li.active, .filterbar li.active:hover {opacity: 1; background: #0069B5;}
@@ -354,11 +355,11 @@
         <div id="work">
 		  <div class="filterbar center-align">
 			<ul>
-			  <li class="active"><a data-filter="all"><i class="material-icons">apps</i></a><span>All</span></li>
-			  <li><a data-filter=".category-a"><i class="material-icons">devices</i></a><span>Digital</span></li>
-			  <li><a data-filter=".category-b"><i class="material-icons">import_contacts</i></a><span>Print</span></li>
-			  <li><a data-filter=".category-c"><i class="material-icons">web</i></a><span>Web</span></li>
-			  <li><a data-filter=".category-d"><i class="material-icons">brightness_auto</i></a><span>Identity</span></li>
+			  <li class="active"><a data-filter="all"><i class="material-icons">apps</i><span>All</span></a></li>
+			  <li><a data-filter=".category-a"><i class="material-icons">devices</i><span>Digital</span></a></li>
+			  <li><a data-filter=".category-b"><i class="material-icons">import_contacts</i><span>Print</span></a></li>
+			  <li><a data-filter=".category-c"><i class="material-icons">web</i><span>Web</span></a></li>
+			  <li><a data-filter=".category-d"><i class="material-icons">brightness_auto</i><span>Identity</span></a></li>
 			</ul>
 		  </div>
 
