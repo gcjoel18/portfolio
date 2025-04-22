@@ -34,7 +34,7 @@ main {
   height: 100vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background-color: #FFB300;
+  background-color: #F5F5F5;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -66,7 +66,7 @@ main {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #FFB300;
+  background-color: #F5F5F5;
   visibility: hidden;
   -webkit-transition: visibility 0s 0.7s;
   -moz-transition: visibility 0s 0.7s;
