@@ -174,7 +174,7 @@ body.section-open .topmenu {animation: fadeInDownBig 1s;}
 .menu a {display: block; color:#000; text-decoration: none; text-transform: uppercase; font-size: 11vw; line-height: inherit; padding: 1vh 0; transition: none;}
 .menu a:before {background: #0069B5;}
 .menu a:hover {background-color: transparent; color: #FFFFFF; /*animation: animatedBackground 0.3s ease 0s 1 normal both, textColorChange 0s linear 0s 1 normal both;*/}
-.menu span {display: none; font-size: 4rem;}
+.menu span {font-size: 4rem;}
 .menu span.lnr {padding-left: 5px;}
 .lnr-envelope {margin-top: -15px;}
 
@@ -388,7 +388,7 @@ input[type=text]:not(.browser-default):focus:not([readonly])+label,  input[type=
 
 @media only screen and (min-width: 480px) {
 .menu a {padding: 10px 30px; font-size: 6vw; line-height: 6vw;}
-.menu span {display: none; padding: 0 20px 10px 0;}
+.menu span {padding: 0 20px 10px 0;}
 .menu .text {display: inline; vertical-align: middle; transition: all 0.1s ease;}
 .topmenu a {margin: 10px; font-size: 16px; padding-bottom: 2px;}
 .lnr-envelope {margin:0;}
@@ -407,7 +407,7 @@ input[type=text]:not(.browser-default):focus:not([readonly])+label,  input[type=
   .right {display: block;}
   .menu {text-align: right;position: absolute; right: 0; bottom: 60px; width: 100%;}
   .menu a {padding: 8px 50px 18px 0;}
-  .menu span {display: none;}
+  .menu span {}
   #contact .container {width: 55%}
 }
 
