@@ -227,7 +227,7 @@ body.contact #contact .card-panel {animation: fadeInUp 1s ease 1 normal;}
 .filterbar a {background: none; border: 0; width: 100%; display: block;}
 .filterbar i {display:none;}
 .filterbar span {text-transform: uppercase; font-size: 12px; font-weight: 700; color: #000;}
-.filterbar li {border: 1px solid #000; border-radius: 5px; margin-bottom: 10px; padding: 4px;}
+.filterbar li {border: 1px solid #000; border-radius: 5px; margin-bottom: 5px; padding: 4px;}
 .filterbar li.active, .filterbar li.active:hover {opacity: 1; background: #000;}
 .filterbar li:hover {opacity: 0.3; background: #000;}
 .filterbar li:hover span {color: #FFB300;}
