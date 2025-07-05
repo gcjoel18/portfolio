@@ -28,7 +28,7 @@ main {
   height: 100vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background-color: #FFB300;
+  background-color: #FFD600;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -60,7 +60,7 @@ main {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #FFB300;
+  background-color: #FFD600;
   visibility: hidden;
   -webkit-transition: visibility 0s 0.7s;
   -moz-transition: visibility 0s 0.7s;
@@ -162,7 +162,7 @@ body.section-open .topmenu {animation: fadeInDownBig 1s;}
 .menu li {float: none;}
 .menu a {display: block; color:#000; text-decoration: none; text-transform: uppercase; font-size: 11vw; line-height: inherit; padding: 1vh 0; transition: none;}
 .menu a:before {background: #000;}
-.menu a:hover {background-color: transparent; color: #FFB300; /*animation: animatedBackground 0.3s ease 0s 1 normal both, textColorChange 0s linear 0s 1 normal both;*/}
+.menu a:hover {background-color: transparent; color: #FFD600; /*animation: animatedBackground 0.3s ease 0s 1 normal both, textColorChange 0s linear 0s 1 normal both;*/}
 .menu span {display: none; font-size: 4rem;}
 .menu span.lnr {padding-left: 5px;}
 .lnr-envelope {margin-top: -15px;}
@@ -173,7 +173,7 @@ body.section-open .topmenu {animation: fadeInDownBig 1s;}
 }
 @keyframes textColorChange {
 0% {color: #000;}
-100% {color: #FFB300;}
+100% {color: #FFD600;}
 } */
 
 .topbar, .topbar .title {display: none;}
@@ -183,7 +183,7 @@ body.section-open .topbar {transform: translateY(0%); opacity: 0.98; visibility:
 body.section-open .topbar .back-button {animation: fadeInLeftBig 1s;}
 body.section-open .topbar .title {animation: fadeInDownBig 1s;}
 body.section-open .topbar .logo {animation: fadeInRightBig 1s;}
-.topbar {transform: translateY(-100%); transition: all 0.4s; z-index: 2; width: 100%; position: fixed; display: flex; align-items: center; justify-content: space-between; background: #FFB300; opacity: 0; visibility: hidden;}
+.topbar {transform: translateY(-100%); transition: all 0.4s; z-index: 2; width: 100%; position: fixed; display: flex; align-items: center; justify-content: space-between; background: #FFD600; opacity: 0; visibility: hidden;}
 .topbar .title {font-size: 24px;}
 .topbar .logo {position: initial; width: 35px; height: 35px; background-size: 35px; background-position: center; margin: 10px;}
 .topbar .back-button {font-size: 3rem; cursor: pointer; padding: 5px;}
@@ -223,16 +223,16 @@ body.contact #contact .card-panel {animation: fadeInUp 1s ease 1 normal;}
 #about .badge {margin: 0; height: auto;}
 #about .chip {font-size: 12px; font-weight: normal; margin: 5px 0 0 0; padding: 0 8px; height: 20px; line-height: 20px;}
 
-.filterbar {position: sticky; top: 20px; left: 0; right: 0; z-index: 1041; background: #FFB300; opacity: 0.98;}
+.filterbar {position: sticky; top: 20px; left: 0; right: 0; z-index: 1041; background: #FFD600; opacity: 0.98;}
 .filterbar a {background: none; border: 0; width: 100%; display: block;}
 .filterbar i {display:none;}
 .filterbar span {text-transform: uppercase; font-size: 12px; font-weight: 700; color: #000;}
 .filterbar li {border: 1px solid #000; border-radius: 5px; margin-bottom: 5px; padding: 4px;}
 .filterbar li.active, .filterbar li.active:hover {opacity: 1; background: #000;}
 .filterbar li:hover {opacity: 0.3; background: #000;}
-.filterbar li:hover span {color: #FFB300;}
-.filterbar li.active a, .filterbar li.active span {color: #FFB300;}
-.filterbar li.active:hover a, .filterbar li.active:hover span {color: #FFB300;}
+.filterbar li:hover span {color: #FFD600;}
+.filterbar li.active a, .filterbar li.active span {color: #FFD600;}
+.filterbar li.active:hover a, .filterbar li.active:hover span {color: #FFD600;}
 
 
 /* Magnific Popup Close Button
